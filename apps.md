@@ -1,0 +1,13 @@
+- Arc browser
+- Chrome
+- Notion
+- Notion Calendar
+- Discord
+- iTerm2
+- zsh
+- powerlevel10k
+- stats
+- nvm
+- urban vpn
+- telegram
+- alfred 5
