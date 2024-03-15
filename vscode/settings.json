@@ -53,7 +53,21 @@
     "generic-slots-in-functions",
     "interface-with-generics",
     "interface-with-multiple-generics",
-    "readonly-utility-type"
+    "readonly-utility-type",
+    "pick-utility-type",
+    "type-alias-with-generics",
+    "type-predicate",
+    "partial-utility-type",
+    "type-alias-with-multiple-generics",
+    "parameters-utility-type",
+    "mapped-type",
+    "keyof",
+    "conditional-type",
+    "record-utility-type",
+    "tuple-type",
+    "exclude-utility-type",
+    "bigint",
+    "never-keyword"
   ],
-  "window.confirmBeforeClose": "always"
+  "window.confirmBeforeClose": "always",
 }
