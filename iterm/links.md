@@ -1,0 +1,1 @@
+- [option + arrows navigation in iTerm](https://holmberg.io/moving-word-by-word-in-iterm/)
