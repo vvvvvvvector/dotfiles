@@ -1,1 +1,2 @@
 - [option + arrows navigation in iTerm](https://holmberg.io/moving-word-by-word-in-iterm/)
+- option + delete -> can delete string in the terminal word by word
