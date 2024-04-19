@@ -11,7 +11,7 @@
   "totalTypeScript.hideBasicTips": true,
   "workbench.productIconTheme": "feather-vscode",
   "workbench.colorTheme": "poimandres-noitalics-storm",
-  "workbench.iconTheme": "developer-icon-theme",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.startupEditor": "none",
   "terminal.integrated.fontFamily": "meslolgs nf",
   "terminal.integrated.fontSize": 12.5,
@@ -67,7 +67,11 @@
     "tuple-type",
     "exclude-utility-type",
     "bigint",
-    "never-keyword"
+    "never-keyword",
+    "non-null-expression",
+    "returntype-utility-type",
+    "nested-conditional-type",
+    "infer"
   ],
-  "window.confirmBeforeClose": "always",
+  "window.confirmBeforeClose": "always"
 }

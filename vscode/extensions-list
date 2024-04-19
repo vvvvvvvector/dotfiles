@@ -1,5 +1,6 @@
 code --install-extension astro-build.astro-vscode
 code --install-extension bradlc.vscode-tailwindcss
+code --install-extension catppuccin.catppuccin-vsc-icons
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension dracula-theme.theme-dracula
 code --install-extension dsznajder.es7-react-js-snippets
@@ -19,6 +20,7 @@ code --install-extension melishev.feather-vscode
 code --install-extension miguelsolorio.fluent-icons
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-dotnettools.csharp
+code --install-extension ms-dotnettools.vscode-dotnet-runtime
 code --install-extension ms-python.autopep8
 code --install-extension ms-python.debugpy
 code --install-extension ms-python.isort
