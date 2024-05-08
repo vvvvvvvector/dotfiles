@@ -18,6 +18,7 @@
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "line",
+  "terminal.integrated.allowChords": false,
   "RainbowBrackets.depreciation-notice": false,
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -71,7 +72,10 @@
     "non-null-expression",
     "returntype-utility-type",
     "nested-conditional-type",
-    "infer"
+    "infer",
+    "awaited-utility-type"
   ],
-  "window.confirmBeforeClose": "always"
+  "window.confirmBeforeClose": "always",
+  "prettify-ts.enableHover": false,
+  "editor.accessibilitySupport": "off",
 }
