@@ -1,13 +1,12 @@
 - Arc browser
 - Chrome
-- Notion
-- Notion Calendar
+- Notion, Notion Calendar
 - Discord
-- iTerm2
-- zsh
-- powerlevel10k
-- stats
+- iTerm2, oh my zsh, powerlevel10k
+- Stats
 - nvm
-- urban vpn
-- telegram
-- alfred 5
+- Telegram
+- Alfred 5
+- Raycast
+- Tunnel bear (VPN)
+- Docker
