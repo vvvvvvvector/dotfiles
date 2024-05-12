@@ -367,7 +367,7 @@
     "Green Component" : 0.47524076700210571
   },
   "Use Bold Font" : true,
-  "Silence Bell" : false,
+  "Silence Bell" : true,
   "Ansi 12 Color" : {
     "Red Component" : 0.65349078178405762,
     "Color Space" : "sRGB",
