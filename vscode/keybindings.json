@@ -1,61 +1,101 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "alt+cmd+e",
-    "command": "toggleSearchRegex",
-    "when": "searchInputBoxFocus && searchViewletVisible"
+      "key": "alt+cmd+e",
+      "command": "toggleSearchRegex",
+      "when": "searchInputBoxFocus && searchViewletVisible"
   },
   {
-    "key": "alt+e",
-    "command": "-toggleSearchRegex",
-    "when": "searchInputBoxFocus && searchViewletVisible"
+      "key": "alt+e",
+      "command": "-toggleSearchRegex",
+      "when": "searchInputBoxFocus && searchViewletVisible"
   },
   {
-    "key": "alt+cmd+e",
-    "command": "toggleFindRegex",
-    "when": "editorFocus"
+      "key": "alt+cmd+e",
+      "command": "toggleFindRegex",
+      "when": "editorFocus"
   },
   {
-    "key": "alt+e",
-    "command": "-toggleFindRegex",
-    "when": "editorFocus"
+      "key": "alt+e",
+      "command": "-toggleFindRegex",
+      "when": "editorFocus"
   },
   {
-    "key": "alt+cmd+z",
-    "command": "editor.action.toggleWordWrap"
+      "key": "alt+cmd+z",
+      "command": "editor.action.toggleWordWrap"
   },
   {
-    "key": "alt+z",
-    "command": "-editor.action.toggleWordWrap"
+      "key": "alt+z",
+      "command": "-editor.action.toggleWordWrap"
   },
   {
-    "key": "cmd+i",
-    "command": "-workbench.action.chat.startVoiceChat",
-    "when": "hasChatProvider && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !notebookEditorFocused && !quickVoiceChatInProgress && !terminalChatActiveRequest && !terminalVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !notebookEditorFocused && !quickVoiceChatInProgress && !terminalChatActiveRequest && !terminalVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress"
+      "key": "cmd+i",
+      "command": "-workbench.action.chat.startVoiceChat",
+      "when": "hasChatProvider && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !notebookEditorFocused && !quickVoiceChatInProgress && !terminalChatActiveRequest && !terminalVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !notebookEditorFocused && !quickVoiceChatInProgress && !terminalChatActiveRequest && !terminalVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress"
   },
   {
-    "key": "cmd+i",
-    "command": "-workbench.action.chat.stopListeningAndSubmit",
-    "when": "hasChatProvider && hasSpeechProvider && inChatInput && voiceChatInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && voiceChatInProgress"
+      "key": "cmd+i",
+      "command": "-workbench.action.chat.stopListeningAndSubmit",
+      "when": "hasChatProvider && hasSpeechProvider && inChatInput && voiceChatInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && voiceChatInProgress"
   },
   {
-    "key": "cmd+i",
-    "command": "-github.copilot.terminal.suggestCommand",
-    "when": "terminalFocus"
+      "key": "cmd+i",
+      "command": "-github.copilot.terminal.suggestCommand",
+      "when": "terminalFocus"
   },
   {
-    "key": "cmd+i",
-    "command": "-workbench.action.terminal.chat.focusInput",
-    "when": "config.terminal.integrated.experimentalInlineChat && terminalChatFocus && !inlineChatFocused"
+      "key": "cmd+i",
+      "command": "-workbench.action.terminal.chat.focusInput",
+      "when": "config.terminal.integrated.experimentalInlineChat && terminalChatFocus && !inlineChatFocused"
   },
   {
-    "key": "cmd+i",
-    "command": "-inlineChat.start",
-    "when": "editorFocus && inlineChatHasProvider && !editorReadonly"
+      "key": "cmd+i",
+      "command": "-inlineChat.start",
+      "when": "editorFocus && inlineChatHasProvider && !editorReadonly"
   },
   {
-    "key": "cmd+i",
-    "command": "-workbench.action.terminal.chat.start",
-    "when": "config.terminal.integrated.experimentalInlineChat && inlineChatHasProvider && terminalFocusInAny && terminalHasBeenCreated || config.terminal.integrated.experimentalInlineChat && inlineChatHasProvider && terminalFocusInAny && terminalProcessSupported"
+      "key": "cmd+i",
+      "command": "-workbench.action.terminal.chat.start",
+      "when": "config.terminal.integrated.experimentalInlineChat && inlineChatHasProvider && terminalFocusInAny && terminalHasBeenCreated || config.terminal.integrated.experimentalInlineChat && inlineChatHasProvider && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+      "key": "cmd+up",
+      "command": "-editor.action.goToTopHover",
+      "when": "editorHoverFocused"
+  },
+  {
+      "key": "cmd+down",
+      "command": "-editor.action.goToBottomHover",
+      "when": "editorHoverFocused"
+  },
+  {
+      "key": "cmd+up",
+      "command": "cursorMove",
+      "args": {
+          "to": "up",
+          "by": "line",
+          "value": 10 
+      },
+      "when": "editorTextFocus"
+  },
+  {
+      "key": "cmd+down",       
+      "command": "cursorMove",
+      "args": {
+          "to": "down",
+          "by": "line",
+          "value": 10         
+      },
+      "when": "editorTextFocus"
+  },
+  {
+      "key": "cmd+up",
+      "command": "-inlineChat.focus",
+      "when": "editorTextFocus && inlineChatVisible && !accessibilityModeEnabled && !inlineChatFocused && !isEmbeddedDiffEditor && inlineChatOuterCursorPosition == 'below'"
+  },
+  {
+      "key": "cmd+up",
+      "command": "-workbench.action.terminal.chat.focusInput",
+      "when": "terminalChatFocus && !inlineChatFocused"
   }
 ]
