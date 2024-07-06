@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 0.5,
   "editor.fontSize": 15.5,
   "editor.tabSize": 2,
   "editor.cursorStyle": "line-thin",
@@ -15,11 +14,14 @@
   "workbench.startupEditor": "none",
   "terminal.integrated.fontFamily": "meslolgs nf",
   "terminal.integrated.fontSize": 12.5,
-  "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyleInactive": "line",
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorStyleInactive": "underline",
   "terminal.integrated.allowChords": false,
   "RainbowBrackets.depreciation-notice": false,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -73,9 +75,17 @@
     "returntype-utility-type",
     "nested-conditional-type",
     "infer",
-    "awaited-utility-type"
+    "awaited-utility-type",
+    "remapping-in-mapped-type",
+    "lowercase-utility-type",
+    "required-utility-type",
+    "nonnullable-utility-type",
+    "extract-utility-type"
   ],
   "window.confirmBeforeClose": "always",
   "prettify-ts.enableHover": false,
   "editor.accessibilitySupport": "off",
+  "prettify-ts.viewNestedTypes": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "window.zoomLevel": 0.5,
 }
