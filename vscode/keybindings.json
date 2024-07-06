@@ -74,17 +74,17 @@
         "args": {
             "to": "up",
             "by": "line",
-            "value": 5 
+            "value": 5
         },
         "when": "editorTextFocus"
     },
     {
-        "key": "cmd+down",       
+        "key": "cmd+down",
         "command": "cursorMove",
         "args": {
             "to": "down",
             "by": "line",
-            "value": 5         
+            "value": 5
         },
         "when": "editorTextFocus"
     },
@@ -195,5 +195,13 @@
     {
         "key": "shift+alt+cmd+i",
         "command": "-bracketeer.removeBrackets"
+    },
+    {
+        "key": "cmd+p cmd+f",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
     }
 ]
