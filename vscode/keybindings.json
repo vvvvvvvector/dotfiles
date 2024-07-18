@@ -74,7 +74,7 @@
         "args": {
             "to": "up",
             "by": "line",
-            "value": 5
+            "value": 10
         },
         "when": "editorTextFocus"
     },
@@ -84,7 +84,7 @@
         "args": {
             "to": "down",
             "by": "line",
-            "value": 5
+            "value": 10
         },
         "when": "editorTextFocus"
     },
@@ -213,5 +213,20 @@
         "key": "f12",
         "command": "-editor.action.revealDefinition",
         "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+2",
+        "command": "-editor.foldLevel2",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "cmd+k cmd+2",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     }
 ]
