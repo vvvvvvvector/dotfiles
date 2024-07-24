@@ -1,9 +1,9 @@
 {
   "editor.fontSize": 15.5,
   "editor.tabSize": 2,
-  "editor.cursorStyle": "line-thin",
+  "editor.cursorStyle": "block",
   "editor.cursorWidth": 1,
-  "editor.cursorBlinking": "expand",
+  "editor.cursorBlinking": "phase",
   "editor.minimap.autohide": true,
   "editor.cursorSmoothCaretAnimation": "on",
   "totalTypeScript.hideAllTips": false,
@@ -20,67 +20,67 @@
   "terminal.integrated.allowChords": false,
   "RainbowBrackets.depreciation-notice": false,
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
+      "editor.defaultFormatter": "Prisma.prisma"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+      "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "totalTypeScript.hiddenTips": [
-    "in-operator-narrowing",
-    "passing-generics-to-types",
-    "typeof",
-    "as-const",
-    "as-const-on-object",
-    "omit-utility-type",
-    "generic-slots-in-functions",
-    "interface-with-generics",
-    "interface-with-multiple-generics",
-    "readonly-utility-type",
-    "pick-utility-type",
-    "type-alias-with-generics",
-    "type-predicate",
-    "partial-utility-type",
-    "type-alias-with-multiple-generics",
-    "parameters-utility-type",
-    "mapped-type",
-    "keyof",
-    "conditional-type",
-    "record-utility-type",
-    "tuple-type",
-    "exclude-utility-type",
-    "bigint",
-    "never-keyword",
-    "non-null-expression",
-    "returntype-utility-type",
-    "nested-conditional-type",
-    "infer",
-    "awaited-utility-type",
-    "remapping-in-mapped-type",
-    "lowercase-utility-type",
-    "required-utility-type",
-    "nonnullable-utility-type",
-    "extract-utility-type"
+      "in-operator-narrowing",
+      "passing-generics-to-types",
+      "typeof",
+      "as-const",
+      "as-const-on-object",
+      "omit-utility-type",
+      "generic-slots-in-functions",
+      "interface-with-generics",
+      "interface-with-multiple-generics",
+      "readonly-utility-type",
+      "pick-utility-type",
+      "type-alias-with-generics",
+      "type-predicate",
+      "partial-utility-type",
+      "type-alias-with-multiple-generics",
+      "parameters-utility-type",
+      "mapped-type",
+      "keyof",
+      "conditional-type",
+      "record-utility-type",
+      "tuple-type",
+      "exclude-utility-type",
+      "bigint",
+      "never-keyword",
+      "non-null-expression",
+      "returntype-utility-type",
+      "nested-conditional-type",
+      "infer",
+      "awaited-utility-type",
+      "remapping-in-mapped-type",
+      "lowercase-utility-type",
+      "required-utility-type",
+      "nonnullable-utility-type",
+      "extract-utility-type"
   ],
   "window.confirmBeforeClose": "always",
   "prettify-ts.enableHover": false,
@@ -88,4 +88,11 @@
   "prettify-ts.viewNestedTypes": true,
   "github.copilot.editor.enableAutoCompletions": true,
   "window.zoomLevel": 0.5,
+  "workbench.view.alwaysShowHeaderActions": true,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.minimap.enabled": true,
+  "workbench.activityBar.location": "top",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.wrapTabs": true,
 }
