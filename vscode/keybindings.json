@@ -295,5 +295,33 @@
         "key": "ctrl+shift+left",
         "command": "-editor.action.smartSelect.shrink",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "editor.emmet.action.updateTag"
+    },
+    {
+        "key": "alt+r",
+        "command": "deleteRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-deleteRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt",
+        "command": "deleteLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "backspace",
+        "command": "-deleteLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+t",
+        "command": "editor.emmet.action.removeTag"
     }
 ]
