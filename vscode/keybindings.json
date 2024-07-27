@@ -318,5 +318,24 @@
     {
         "key": "alt+t",
         "command": "editor.emmet.action.removeTag"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "alt+w",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
     }
 ]
