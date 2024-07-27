@@ -311,11 +311,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "alt",
-        "command": "deleteLeft",
-        "when": "textInputFocus"
-    },
-    {
         "key": "backspace",
         "command": "-deleteLeft",
         "when": "textInputFocus"
