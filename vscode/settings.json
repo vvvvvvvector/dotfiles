@@ -3,6 +3,7 @@
     "editor.tabSize": 2,
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block",
+    "vim.disableExtension": true,
     "editor.cursorWidth": 1,
     "editor.cursorBlinking": "phase",
     "editor.minimap.autohide": true,
@@ -95,5 +96,5 @@
     "editor.minimap.enabled": true,
     "workbench.activityBar.location": "top",
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.wrapTabs": true,
+    "workbench.editor.wrapTabs": true
 }
