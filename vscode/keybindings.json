@@ -311,11 +311,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "backspace",
-        "command": "-deleteLeft",
-        "when": "textInputFocus"
-    },
-    {
         "key": "alt+t",
         "command": "editor.emmet.action.removeTag"
     },
