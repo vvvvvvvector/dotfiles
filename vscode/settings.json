@@ -96,5 +96,10 @@
     "editor.minimap.enabled": true,
     "workbench.activityBar.location": "top",
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.wrapTabs": true
+    "workbench.editor.wrapTabs": true,
+    "editor.lineNumbers": "relative",
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    }
 }
