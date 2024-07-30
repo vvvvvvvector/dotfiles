@@ -1,105 +1,360 @@
-{
-    "editor.fontSize": 15.5,
-    "editor.tabSize": 2,
-    "vim.cursorStylePerMode.insert": "line",
-    "vim.cursorStylePerMode.normal": "block",
-    "vim.disableExtension": true,
-    "editor.cursorWidth": 1,
-    "editor.cursorBlinking": "phase",
-    "editor.minimap.autohide": true,
-    "editor.cursorSmoothCaretAnimation": "on",
-    "totalTypeScript.hideAllTips": false,
-    "totalTypeScript.hideBasicTips": true,
-    "workbench.productIconTheme": "feather-vscode",
-    "workbench.colorTheme": "poimandres-noitalics-storm",
-    "workbench.iconTheme": "catppuccin-macchiato",
-    "workbench.startupEditor": "none",
-    "terminal.integrated.fontFamily": "meslolgs nf",
-    "terminal.integrated.fontSize": 12.5,
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "block",
-    "terminal.integrated.cursorStyleInactive": "underline",
-    "terminal.integrated.allowChords": false,
-    "RainbowBrackets.depreciation-notice": false,
-    "[prisma]": {
-        "editor.defaultFormatter": "Prisma.prisma"
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "alt+cmd+e",
+        "command": "toggleSearchRegex",
+        "when": "searchInputBoxFocus && searchViewletVisible"
     },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+    {
+        "key": "alt+e",
+        "command": "-toggleSearchRegex",
+        "when": "searchInputBoxFocus && searchViewletVisible"
     },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "alt+cmd+e",
+        "command": "toggleFindRegex",
+        "when": "editorFocus"
     },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "alt+e",
+        "command": "-toggleFindRegex",
+        "when": "editorFocus"
     },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "alt+cmd+z",
+        "command": "editor.action.toggleWordWrap"
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "alt+z",
+        "command": "-editor.action.toggleWordWrap"
     },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "cmd+i",
+        "command": "-workbench.action.chat.startVoiceChat",
+        "when": "hasChatProvider && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !notebookEditorFocused && !quickVoiceChatInProgress && !terminalChatActiveRequest && !terminalVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !notebookEditorFocused && !quickVoiceChatInProgress && !terminalChatActiveRequest && !terminalVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress"
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "cmd+i",
+        "command": "-workbench.action.chat.stopListeningAndSubmit",
+        "when": "hasChatProvider && hasSpeechProvider && inChatInput && voiceChatInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && voiceChatInProgress"
     },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+        "key": "cmd+i",
+        "command": "-github.copilot.terminal.suggestCommand",
+        "when": "terminalFocus"
     },
-    "totalTypeScript.hiddenTips": [
-        "in-operator-narrowing",
-        "passing-generics-to-types",
-        "typeof",
-        "as-const",
-        "as-const-on-object",
-        "omit-utility-type",
-        "generic-slots-in-functions",
-        "interface-with-generics",
-        "interface-with-multiple-generics",
-        "readonly-utility-type",
-        "pick-utility-type",
-        "type-alias-with-generics",
-        "type-predicate",
-        "partial-utility-type",
-        "type-alias-with-multiple-generics",
-        "parameters-utility-type",
-        "mapped-type",
-        "keyof",
-        "conditional-type",
-        "record-utility-type",
-        "tuple-type",
-        "exclude-utility-type",
-        "bigint",
-        "never-keyword",
-        "non-null-expression",
-        "returntype-utility-type",
-        "nested-conditional-type",
-        "infer",
-        "awaited-utility-type",
-        "remapping-in-mapped-type",
-        "lowercase-utility-type",
-        "required-utility-type",
-        "nonnullable-utility-type",
-        "extract-utility-type"
-    ],
-    "window.confirmBeforeClose": "always",
-    "prettify-ts.enableHover": false,
-    "editor.accessibilitySupport": "off",
-    "prettify-ts.viewNestedTypes": true,
-    "github.copilot.editor.enableAutoCompletions": true,
-    "window.zoomLevel": 0.5,
-    "workbench.view.alwaysShowHeaderActions": true,
-    "workbench.editor.pinnedTabsOnSeparateRow": true,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.minimap.enabled": true,
-    "workbench.activityBar.location": "top",
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.wrapTabs": true,
-    "editor.lineNumbers": "relative",
-    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-    "extensions.experimental.affinity": {
-        "vscodevim.vim": 1
+    {
+        "key": "cmd+i",
+        "command": "-workbench.action.terminal.chat.focusInput",
+        "when": "config.terminal.integrated.experimentalInlineChat && terminalChatFocus && !inlineChatFocused"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-inlineChat.start",
+        "when": "editorFocus && inlineChatHasProvider && !editorReadonly"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-workbench.action.terminal.chat.start",
+        "when": "config.terminal.integrated.experimentalInlineChat && inlineChatHasProvider && terminalFocusInAny && terminalHasBeenCreated || config.terminal.integrated.experimentalInlineChat && inlineChatHasProvider && terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+up",
+        "command": "-editor.action.goToTopHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "cmd+down",
+        "command": "-editor.action.goToBottomHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "cmd+up",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+down",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+up",
+        "command": "-inlineChat.focus",
+        "when": "editorTextFocus && inlineChatVisible && !accessibilityModeEnabled && !inlineChatFocused && !isEmbeddedDiffEditor && inlineChatOuterCursorPosition == 'below'"
+    },
+    {
+        "key": "cmd+up",
+        "command": "-workbench.action.terminal.chat.focusInput",
+        "when": "terminalChatFocus && !inlineChatFocused"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "-cursorColumnSelectLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "-cursorColumnSelectRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-workbench.action.chat.insertCodeBlock",
+        "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "shift+cmd+h",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "shift+cmd+h",
+        "command": "bracketeer.selectBracketContent"
+    },
+    {
+        "key": "shift+alt+cmd+h",
+        "command": "-bracketeer.selectBracketContent"
+    },
+    {
+        "key": "cmd+y",
+        "command": "redo"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "-redo"
+    },
+    {
+        "key": "cmd+k cmd+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+k cmd+d",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "cmd+k cmd+d",
+        "command": "editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "cmd+p cmd+r",
+        "command": "editor.action.referenceSearch.trigger"
+    },
+    {
+        "key": "shift+cmd+0",
+        "command": "bracketeer.selectQuotesContent"
+    },
+    {
+        "key": "shift+alt+cmd+0",
+        "command": "-bracketeer.selectQuotesContent"
+    },
+    {
+        "key": "shift+cmd+9",
+        "command": "bracketeer.swapBrackets"
+    },
+    {
+        "key": "shift+alt+cmd+k",
+        "command": "-bracketeer.swapBrackets"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "-workbench.action.quickchat.toggle",
+        "when": "chatIsEnabled"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "bracketeer.removeBrackets"
+    },
+    {
+        "key": "shift+alt+cmd+i",
+        "command": "-bracketeer.removeBrackets"
+    },
+    {
+        "key": "cmd+p cmd+f",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p cmd+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+2",
+        "command": "-editor.foldLevel2",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "cmd+k cmd+2",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "editor.emmet.action.balanceOut"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "editor.emmet.action.matchTag",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "-cursorTopSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "-cursorBottomSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "-workbench.action.terminal.selectToNextCommand",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "-list.collapseAll",
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "-workbench.action.terminal.selectToPreviousCommand",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "editor.emmet.action.balanceIn"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "editor.emmet.action.updateTag"
+    },
+    {
+        "key": "alt+r",
+        "command": "deleteRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-deleteRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+t",
+        "command": "editor.emmet.action.removeTag"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "alt+w",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
+    },
+    {
+        "key": "shift+cmd+v",
+        "command": "-markdown.showPreview",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "shift+cmd+v",
+        "command": "-notebook.cell.pasteAbove",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "cmd+t cmd+v",
+        "command": "toggleVim"
+    },
+    {
+        "key": "shift+cmd+\\",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+\\",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
     }
-}
+]
