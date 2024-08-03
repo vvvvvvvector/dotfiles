@@ -98,14 +98,17 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
+# -----------------aliases-----------------
+
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tc=clear
+alias pn=pnpm
+alias px=pnpm dlx
+
+# -----------------aliases-----------------
+
+# -----------------nvm-----------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -115,19 +118,83 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pnpm
+# -----------------nvm-----------------
+
+# -----------------pnpm-----------------
+
 export PNPM_HOME="/Users/vvvvvec1or/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-alias pn=pnpm
-alias px=pnpm dlx
-# pnpm end
+# -----------------pnpm-----------------
+
+# -----------------fzf-----------------
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias tc=clear
+export FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git'
+export FZF_DEFAULT_OPTS='--height 100% --preview-window=down,70%'
+
+export FZF_CTRL_T_OPTS="
+  --preview 'bat --style numbers,changes --color=always --line-range :500 {}'
+  --bind 'ctrl-/:change-preview-window(hidden|)'"
+
+# -----------------fzf-----------------
+
+# -----------------fzf-git-----------------
+
+source ~/fzf-git.sh/fzf-git.sh
+
+_fzf_git_fzf() {
+  fzf-tmux -- \
+    --layout=reverse --multi --height=100% --border \
+    --border-label-pos=2 \
+    --color='header:italic:underline,label:blue' \
+    --preview-window='down,60%,border-top' \
+    --bind='ctrl-/:change-preview-window(hidden|)' "$@"
+}
+
+_fzf_git_remotes() {
+  _fzf_git_check || return
+  git remote -v | awk '{print $1 "\t" $2}' | uniq |
+  _fzf_git_fzf --tac \
+    --border-label 'Remotes' \
+    --header $'CTRL-O (open in browser)\n\n' \
+    --bind "ctrl-o:execute-silent:bash $__fzf_git remote {1}" \
+    --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' '{1}/$(git rev-parse --abbrev-ref HEAD)' --" "$@" |
+  cut -d$'\t' -f1
+}
+
+_fzf_git_branches() {
+  _fzf_git_check || return
+  bash "$__fzf_git" branches |
+  _fzf_git_fzf --ansi \
+    --border-label 'Branches' \
+    --header-lines 2 \
+    --tiebreak begin \
+    --color hl:underline,hl+:underline \
+    --no-hscroll \
+    --bind 'ctrl-/:change-preview-window(down,70%|hidden|)' \
+    --bind "ctrl-o:execute-silent:bash $__fzf_git branch {}" \
+    --bind "alt-a:change-border-label(All branches)+reload:bash \"$__fzf_git\" all-branches" \
+    --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' \$(sed s/^..// <<< {} | cut -d' ' -f1) --" "$@" |
+  sed 's/^..//' | cut -d' ' -f1
+}
+
+_fzf_git_hashes() {
+  _fzf_git_check || return
+  bash "$__fzf_git" hashes |
+  _fzf_git_fzf --ansi --no-sort --bind 'ctrl-s:toggle-sort' \
+    --border-label 'Hashes' \
+    --header-lines 3 \
+    --bind "ctrl-o:execute-silent:bash $__fzf_git commit {}" \
+    --bind "ctrl-d:execute:grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git diff --color=$(__fzf_git_color) > /dev/tty" \
+    --bind "alt-a:change-border-label(All hashes)+reload:bash \"$__fzf_git\" all-hashes" \
+    --color hl:underline,hl+:underline \
+    --preview "grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git show --color=$(__fzf_git_color .) | $(__fzf_git_pager)" "$@" |
+  awk 'match($0, /[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]*/) { print substr($0, RSTART, RLENGTH) }'
+}
+
+# -----------------fzf-git-----------------
