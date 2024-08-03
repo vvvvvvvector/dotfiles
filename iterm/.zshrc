@@ -146,7 +146,7 @@ export FZF_CTRL_T_OPTS="
 
 # -----------------fzf-git-----------------
 
-source ~/fzf-git.sh/fzf-git.sh
+[ -f ~/.fzf-git.sh ] && source ~/.fzf-git.sh
 
 _fzf_git_fzf() {
   fzf-tmux -- \
