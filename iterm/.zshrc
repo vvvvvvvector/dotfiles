@@ -134,9 +134,10 @@ esac
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git'
+export FZF_DEFAULT_COMMAND='fd -H -E .git --type f'
 export FZF_DEFAULT_OPTS='--height 100% --preview-window=down,70%'
 
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="
   --preview 'bat --style numbers,changes --color=always --line-range :500 {}'
   --bind 'ctrl-/:change-preview-window(hidden|)'"
