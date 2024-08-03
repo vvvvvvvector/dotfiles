@@ -205,3 +205,9 @@ _fzf_git_hashes() {
 export BAT_THEME="Visual Studio Dark+"
 
 # -----------------bat-----------------
+
+# -----------------thefuck-----------------
+
+eval $(thefuck --alias)
+
+# -----------------thefuck-----------------
