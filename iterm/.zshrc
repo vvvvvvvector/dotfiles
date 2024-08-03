@@ -211,3 +211,10 @@ export BAT_THEME="Visual Studio Dark+"
 eval $(thefuck --alias)
 
 # -----------------thefuck-----------------
+
+
+# -----------------zoxide-----------------
+
+eval "$(zoxide init zsh)"
+
+# -----------------zoxide-----------------
