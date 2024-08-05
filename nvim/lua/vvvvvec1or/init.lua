@@ -1,5 +1,5 @@
 require('vvvvvec1or.core')
-require('vvvvvec1or.remap')
 require('vvvvvec1or.lazy')
+require('vvvvvec1or.remap')
 
 print('hello init.lua')

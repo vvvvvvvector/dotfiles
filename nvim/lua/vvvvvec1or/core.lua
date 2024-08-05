@@ -1,5 +1,7 @@
 vim.cmd('language en_US')
 
+vim.g.mapleader = ' '
+
 vim.opt.relativenumber = true
 vim.opt.number = true
 

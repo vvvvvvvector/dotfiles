@@ -16,4 +16,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup("vvvvvec1or.plugins")
+require("lazy").setup({
+	spec = {
+		{ import = "vvvvvec1or.plugins" }
+	},
+	checker = { enabled = true },
+})
