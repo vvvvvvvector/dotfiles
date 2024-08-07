@@ -101,5 +101,7 @@
     "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
-    }
+    },
+    "vim.autoindent": true,
+    "vim.useSystemClipboard": true
 }
