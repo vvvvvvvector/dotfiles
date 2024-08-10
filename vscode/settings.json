@@ -103,7 +103,18 @@
     "vim.useSystemClipboard": true,
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block",
-    "vim.disableExtension": true,
+    "vim.disableExtension": false,
     "vim.leader": "<Space>",
-    "vim.hlsearch": true
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ]
 }
