@@ -1,9 +1,6 @@
 {
     "editor.fontSize": 15.5,
     "editor.tabSize": 2,
-    "vim.cursorStylePerMode.insert": "line",
-    "vim.cursorStylePerMode.normal": "block",
-    "vim.disableExtension": true,
     "editor.cursorWidth": 1,
     "editor.cursorBlinking": "phase",
     "editor.minimap.autohide": true,
@@ -103,5 +100,10 @@
         "vscodevim.vim": 1
     },
     "vim.autoindent": true,
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.disableExtension": true,
+    "vim.leader": "<Space>",
+    "vim.hlsearch": true
 }
