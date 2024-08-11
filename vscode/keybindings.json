@@ -396,5 +396,9 @@
         "key": "cmd+k e",
         "command": "-workbench.files.action.focusOpenEditorsView",
         "when": "workbench.explorer.openEditorsView.active"
-    }
+    },
+    {
+        "key": "cmd+p cmd+q",
+        "command": "workbench.action.quickTextSearch"
+    },
 ]
