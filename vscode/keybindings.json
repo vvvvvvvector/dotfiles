@@ -476,10 +476,6 @@
         "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
     },
     {
-        "key": "cmd+s cmd+e",
-        "command": "workbench.action.splitEditor"
-    },
-    {
         "key": "cmd+3",
         "command": "-workbench.action.focusThirdEditorGroup"
     },
@@ -506,5 +502,17 @@
     {
         "key": "cmd+9",
         "command": "-workbench.action.lastEditorInGroup"
+    },
+    {
+        "key": "cmd+r cmd+z",
+        "command": "workbench.action.zoomReset"
+    },
+    {
+        "key": "cmd+numpad0",
+        "command": "-workbench.action.zoomReset"
+    },
+    {
+        "key": "cmd+[IntlBackslash]",
+        "command": "workbench.action.splitEditor"
     },
 ]
