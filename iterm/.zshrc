@@ -142,7 +142,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=prompt:#c084fc,spinner:#c084fc,pointer:#c084fc,header:#10b981
   --color=border:#71717a,label:#aeaeae,query:#d9d9d9
   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧: "
-  --marker="$" --pointer="λ" --separator="~" --scrollbar="|"'
+  --marker="$" --pointer="|" --separator="~" --scrollbar="|"'
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="
@@ -160,8 +160,8 @@ _fzf_git_fzf() {
     --layout=reverse --multi --height=100% --border \
     --border-label-pos=2 \
     --color='header:italic:underline,label:blue' \
-    --preview-window='down,60%,border-top' \
-    --bind='ctrl-/:change-preview-window(hidden|)' "$@"
+    --preview-window='bottom,70%,border-top' \
+    --bind='ctrl-/:change-preview-window(right,65%,border-left|)' "$@"
 }
 
 _fzf_git_remotes() {
@@ -184,7 +184,6 @@ _fzf_git_branches() {
     --tiebreak begin \
     --color hl:underline,hl+:underline \
     --no-hscroll \
-    --bind 'ctrl-/:change-preview-window(down,70%|hidden|)' \
     --bind "ctrl-o:execute-silent:bash $__fzf_git branch {}" \
     --bind "alt-a:change-border-label(All branches)+reload:bash \"$__fzf_git\" all-branches" \
     --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' \$(sed s/^..// <<< {} | cut -d' ' -f1) --" "$@" |
