@@ -127,6 +127,16 @@
             "commands": [
                 ":nohl",
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q",
+                "f"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
         }
     ],
     "vim.visualModeKeyBindings": [
