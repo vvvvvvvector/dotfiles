@@ -90,6 +90,7 @@
     "workbench.view.alwaysShowHeaderActions": true,
     "workbench.editor.pinnedTabsOnSeparateRow": true,
     "editor.bracketPairColorization.enabled": true,
+    "editor.minimap.enabled": true,
     "workbench.activityBar.location": "top",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.wrapTabs": true,
@@ -126,62 +127,7 @@
             "commands": [
                 ":nohl",
             ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "e",
-            ],
-            "commands": [
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "<leader>",
-                "e",
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "x",
-            ],
-            "commands": [
-                "workbench.view.extensions"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "g",
-            ],
-            "commands": [
-                "workbench.view.scm"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-            ],
-            "commands": [
-                "workbench.action.findInFiles"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "b",
-            ],
-            "commands": [
-                "workbench.action.toggleAuxiliaryBar"
-            ]
-        },
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -200,8 +146,5 @@
                 "editor.action.outdentLines"
             ]
         },
-    ],
-    "git.openRepositoryInParentFolders": "always",
-    "editor.minimap.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    ]
 }
