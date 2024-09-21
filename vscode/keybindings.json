@@ -476,6 +476,24 @@
         "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
     },
     {
+        "key": "cmd+2",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.focusSecondEditorGroup"
+                },
+                {
+                    "command": "workbench.action.closeSidebar",
+                },
+                {
+                    "command": "workbench.action.quickOpen",
+                }
+            ]
+        },
+        "when": "activeEditorGroupIndex === 1 && !multipleEditorGroups"
+    },
+    {
         "key": "cmd+3",
         "command": "-workbench.action.focusThirdEditorGroup"
     },
@@ -513,7 +531,17 @@
     },
     {
         "key": "cmd+[IntlBackslash]",
-        "command": "workbench.action.splitEditor"
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.closeSidebar",
+                },
+                {
+                    "command": "workbench.action.splitEditor"
+                }
+            ]
+        }
     },
     {
         "key": "alt+cmd+left",
@@ -567,5 +595,18 @@
         "key": "cmd+backspace",
         "command": "-workbench.action.terminal.killActiveTab",
         "when": "terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "cmd+k cmd+b",
+        "command": "-editor.action.setSelectionAnchor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+b",
+        "command": "workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "cmd+k cmd+s",
+        "command": "-workbench.action.openGlobalKeybindings"
     },
 ]
