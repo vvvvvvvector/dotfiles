@@ -467,7 +467,7 @@
         "command": "-workbench.action.togglePanel"
     },
     {
-        "key": "cmd+m cmd+e",
+        "key": "cmd+i cmd+t",
         "command": "workbench.action.terminal.moveToEditor",
         "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
     },
@@ -646,5 +646,33 @@
     {
         "key": "shift+cmd+f",
         "command": "workbench.action.findInFiles"
+    },
+    {
+        "key": "cmd+s cmd+t",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+n cmd+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+i cmd+e",
+        "command": "workbench.action.createTerminalEditor"
+    },
+    {
+        "key": "cmd+i cmd+s",
+        "command": "workbench.action.quickOpenTerm"
     }
 ]
