@@ -100,6 +100,8 @@
         "vscodevim.vim": 1
     },
     "vim.autoindent": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 450,
     "vim.useSystemClipboard": true,
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block",
