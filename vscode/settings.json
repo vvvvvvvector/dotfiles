@@ -90,7 +90,7 @@
     "workbench.view.alwaysShowHeaderActions": true,
     "workbench.editor.pinnedTabsOnSeparateRow": true,
     "editor.bracketPairColorization.enabled": true,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "workbench.activityBar.location": "top",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.wrapTabs": true,
