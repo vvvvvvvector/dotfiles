@@ -609,4 +609,12 @@
         "key": "cmd+k cmd+s",
         "command": "-workbench.action.openGlobalKeybindings"
     },
+    {
+        "key": "cmd+o cmd+s",
+        "command": "workbench.action.openSettingsJson"
+    },
+    {
+        "key": "cmd+o cmd+k",
+        "command": "workbench.action.openGlobalKeybindingsFile"
+    }
 ]
