@@ -102,6 +102,7 @@
     "vim.autoindent": true,
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.duration": 450,
+    "vim.highlightedyank.color": "rgba(124, 58, 237, 0.55)",
     "vim.useSystemClipboard": true,
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block",
@@ -158,5 +159,5 @@
                 "editor.action.outdentLines"
             ]
         },
-    ]
+    ],
 }
