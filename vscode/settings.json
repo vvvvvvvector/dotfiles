@@ -138,7 +138,69 @@
                 "f"
             ],
             "commands": [
-                "editor.action.quickFix"
+                "editor.action.quickfix"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-d>",
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-u>",
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-f>",
+            ],
+            "after": [
+                "<C-f>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-b>",
+            ],
+            "after": [
+                "<C-b>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z"
             ]
         }
     ],
