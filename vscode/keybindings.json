@@ -609,7 +609,7 @@
         "command": "workbench.action.openGlobalKeybindingsFile"
     },
     {
-        "key": "cmd+f",
+        "key": "cmd+d",
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
     },
@@ -619,7 +619,7 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "shift+cmd+f",
+        "key": "cmd+u",
         "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
         "when": "inQuickOpen"
     },
@@ -629,7 +629,7 @@
         "when": "inFilesPicker && inQuickOpen"
     },
     {
-        "key": "cmd+f",
+        "key": "cmd+d",
         "command": "workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inQuickOpen"
     },
@@ -842,7 +842,7 @@
         "when": "inDebugRepl && textInputFocus"
     },
     {
-        "key": "shift+cmd+f",
+        "key": "cmd+u",
         "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
     },
