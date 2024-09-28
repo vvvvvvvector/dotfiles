@@ -292,7 +292,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+`",
+        "key": "cmd+u cmd+t",
         "command": "editor.emmet.action.updateTag"
     },
     {
@@ -306,7 +306,7 @@
         "when": "textInputFocus"
     },
     {
-        "key": "alt+t",
+        "key": "cmd+r cmd+t",
         "command": "editor.emmet.action.removeTag"
     },
     {
@@ -315,7 +315,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "alt+w",
+        "key": "cmd+h cmd+t",
         "command": "editor.emmet.action.wrapWithAbbreviation"
     },
     {
