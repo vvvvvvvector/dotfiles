@@ -134,15 +134,23 @@
         {
             "before": [
                 "<leader>",
-                "q",
                 "f"
             ],
             "commands": [
-                "editor.action.quickfix"
+                "editor.action.quickFix"
             ]
         },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "g",
+                "h"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ]
+        },
         {
             "before": [
                 "<C-d>",
