@@ -21,7 +21,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "alt+cmd+z",
+        "key": "cmd+i cmd+w",
         "command": "editor.action.toggleWordWrap"
     },
     {
@@ -897,5 +897,15 @@
         "key": "cmd+k cmd+i",
         "command": "-list.showHover",
         "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-inlineChat.start",
+        "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-inlineChat.startWithCurrentLine",
+        "when": "editorFocus && github.copilot.chat.editor.enableLineTrigger && inlineChatHasProvider && !editorReadonly && !inlineChatVisible"
     },
 ]
