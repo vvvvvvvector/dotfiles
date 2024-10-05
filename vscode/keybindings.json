@@ -21,7 +21,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "cmd+i cmd+w",
+        "key": "cmd+r cmd+w",
         "command": "editor.action.toggleWordWrap"
     },
     {
@@ -908,4 +908,9 @@
         "command": "-inlineChat.startWithCurrentLine",
         "when": "editorFocus && github.copilot.chat.editor.enableLineTrigger && inlineChatHasProvider && !editorReadonly && !inlineChatVisible"
     },
+    {
+        "key": "cmd+f",
+        "command": "-notebook.find",
+        "when": "notebookEditorFocused && !editorFocus && activeEditor == 'workbench.editor.interactive' || notebookEditorFocused && !editorFocus && activeEditor == 'workbench.editor.notebook'"
+    }
 ]
