@@ -230,4 +230,6 @@
             ]
         },
     ],
+    "workbench.tree.indent": 4,
+    "workbench.tree.renderIndentGuides": "always",
 }
