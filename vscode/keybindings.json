@@ -164,16 +164,8 @@
         "command": "editor.action.referenceSearch.trigger"
     },
     {
-        "key": "shift+cmd+0",
-        "command": "bracketeer.selectQuotesContent"
-    },
-    {
         "key": "shift+alt+cmd+0",
         "command": "-bracketeer.selectQuotesContent"
-    },
-    {
-        "key": "shift+cmd+9",
-        "command": "bracketeer.swapBrackets"
     },
     {
         "key": "shift+alt+cmd+k",
@@ -531,7 +523,7 @@
         "command": "-workbench.action.previousEditor"
     },
     {
-        "key": "shift+cmd+[",
+        "key": "shift+cmd+9",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
@@ -545,7 +537,7 @@
         "command": "-workbench.action.nextEditor"
     },
     {
-        "key": "shift+cmd+]",
+        "key": "shift+cmd+0",
         "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
@@ -1024,5 +1016,15 @@
     {
         "key": "cmd+h cmd+t",
         "command": "editor.emmet.action.wrapWithAbbreviation"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     }
 ]
