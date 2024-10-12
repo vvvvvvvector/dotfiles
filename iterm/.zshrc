@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias tc=clear
 alias pn=pnpm
 alias px=pnpm dlx
+alias lg=lazygit
 
 # -----------------aliases-----------------
 
@@ -161,7 +162,7 @@ _fzf_git_fzf() {
     --border-label-pos=2 \
     --color='header:italic:underline,label:blue' \
     --preview-window='bottom,70%,border-top' \
-    --bind='ctrl-/:change-preview-window(right,65%,border-left|)' "$@"
+    --bind='ctrl-/:change-preview-window(right,65%,border-left|hidden|)' "$@"
 }
 
 _fzf_git_remotes() {
