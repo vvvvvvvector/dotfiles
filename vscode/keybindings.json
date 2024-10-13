@@ -1026,5 +1026,25 @@
         "key": "shift+cmd+[",
         "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "cmd+p cmd+e",
+        "command": "workbench.action.pinEditor",
+        "when": "!activeEditorIsPinned"
+    },
+    {
+        "key": "cmd+k shift+enter",
+        "command": "-workbench.action.pinEditor",
+        "when": "!activeEditorIsPinned"
+    },
+    {
+        "key": "cmd+p cmd+e",
+        "command": "workbench.action.unpinEditor",
+        "when": "activeEditorIsPinned"
+    },
+    {
+        "key": "cmd+k shift+enter",
+        "command": "-workbench.action.unpinEditor",
+        "when": "activeEditorIsPinned"
     }
 ]
