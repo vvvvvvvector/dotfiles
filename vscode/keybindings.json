@@ -1046,5 +1046,23 @@
         "key": "cmd+k shift+enter",
         "command": "-workbench.action.unpinEditor",
         "when": "activeEditorIsPinned"
+    },
+    {
+        "key": "cmd+i cmd+b",
+        "command": "workbench.action.terminal.moveToTerminalPanel"
+    },
+    {
+        "key": "cmd+p cmd+t",
+        "command": "workbench.action.terminal.focusFind"
+    },
+    {
+        "key": "alt+cmd+f",
+        "command": "-editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "alt+cmd+f",
+        "command": "-list.find",
+        "when": "listFocus && listSupportsFind"
     }
 ]
