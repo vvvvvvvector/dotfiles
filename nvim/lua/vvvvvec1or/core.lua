@@ -15,4 +15,6 @@ vim.opt.ignorecase = true
 
 vim.opt.clipboard:append('unnamedplus')
 
+vim.g.netrw_banner = 0
+
 print('hello core.lua')
