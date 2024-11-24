@@ -28,10 +28,10 @@ require("lazy").setup({
 			require('telescope').setup({})
 
 			local builtin = require('telescope.builtin')
-			vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+			vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Open Telescope" })
 			vim.keymap.set('n', '<leader>pq', function()
 				builtin.grep_string({ search = vim.fn.input("Grep > ") })
-			end)
+			end, { desc = "Telescope grep string" })
 		end
 	},
 
@@ -59,6 +59,22 @@ require("lazy").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
 		end
+	},
+
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
 	},
 
 	checker = { enabled = true },
