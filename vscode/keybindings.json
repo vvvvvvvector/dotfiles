@@ -193,16 +193,6 @@
         "command": "-workbench.action.quickOpen"
     },
     {
-        "key": "cmd+p cmd+d",
-        "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus"
-    },
-    {
-        "key": "f12",
-        "command": "-editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus"
-    },
-    {
         "key": "cmd+k cmd+2",
         "command": "-editor.foldLevel2",
         "when": "editorTextFocus && foldingEnabled"
@@ -292,10 +282,6 @@
         "key": "ctrl+d",
         "command": "-deleteRight",
         "when": "textInputFocus"
-    },
-    {
-        "key": "cmd+r cmd+t",
-        "command": "editor.emmet.action.removeTag"
     },
     {
         "key": "shift+cmd+g",
@@ -1064,5 +1050,19 @@
         "key": "alt+cmd+f",
         "command": "-list.find",
         "when": "listFocus && listSupportsFind"
+    },
+    {
+        "key": "cmd+p cmd+d",
+        "command": "editor.action.peekTypeDefinition"
+    },
+    {
+        "key": "cmd+z cmd+t",
+        "command": "workbench.action.toggleZenMode",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "cmd+k z",
+        "command": "-workbench.action.toggleZenMode",
+        "when": "!isAuxiliaryWindowFocusedContext"
     }
 ]
