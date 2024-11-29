@@ -1,0 +1,52 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-p": null,
+      "cmd-p cmd-f": "file_finder::Toggle",
+
+      "cmd-p cmd-q": "project_symbols::Toggle",
+
+      "cmd-b": null,
+      "cmd-e": "workspace::ToggleLeftDock",
+
+      "cmd-j": null,
+      "cmd-t": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-i": null,
+      "cmd-k cmd-d": "editor::Format",
+
+      "ctrl-space": null,
+      "cmd-j": "editor::ShowCompletions",
+
+      "cmd-shift-h": "pane::ActivatePrevItem",
+      "cmd-shift-l": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "cmd-k z": null,
+      "cmd-r cmd-w": "editor::ToggleSoftWrap",
+
+      "cmd-f": null,
+
+      "cmd-f cmd-x": "project_panel::ToggleFocus",
+
+      "cmd-e": null
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "use_layout_keys": true,
+    "bindings": {
+      "alt-cmd-n": null,
+      "cmd-shift-n": "project_panel::NewDirectory",
+      "l": "project_panel::OpenPermanent"
+    }
+  }
+]
