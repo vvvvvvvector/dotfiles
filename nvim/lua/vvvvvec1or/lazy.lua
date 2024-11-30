@@ -37,30 +37,21 @@ require("lazy").setup({
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function() 
-			require("nvim-treesitter.configs").setup({ 
-				-- A list of parser names, or "all"
-				ensure_installed = {
-					"javascript", "typescript", "lua", "prisma", "html", "superhtml", "bash"
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = { 
+					"c", "lua", "vim", "vimdoc", "query", 
+					"typescript", "javascript", "tsx",
+					"sql", "prisma", "json", "jsonc",
 				},
 
-				-- Install parsers synchronously (only applied to `ensure_installed`)
-				sync_install = false,
-
-				-- Automatically install missing parsers when entering buffer
-				-- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
-				auto_install = false,
-
-				indent = {
-					enable = true
-				},
+				auto_install = true,
 
 				highlight = {
-					enable = false,
-				},
+					enable = true,
+				}
 			})
-		end
+		end,
 	},
 
 	{ 
