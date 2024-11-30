@@ -17,4 +17,6 @@ vim.opt.clipboard:append('unnamedplus')
 
 vim.g.netrw_banner = 0
 
-print('hello core.lua')
+-- Reserve a space in the gutter
+-- This will avoid an annoying layout shift in the screen
+vim.opt.signcolumn = 'yes'

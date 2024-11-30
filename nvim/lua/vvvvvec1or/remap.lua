@@ -11,5 +11,3 @@ vim.keymap.set("n", "<leader>to", ":tabnew<cr>", { desc = "Open new tab" })
 vim.keymap.set("n", "<leader>tw", ":tabclose<cr>", { desc = "Close current tab" })
 vim.keymap.set("n", "<leader>t]", ":tabn<cr>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>t[", ":tabp<cr>", { desc = "Go to previous tab" })
-
-print('hello from remap.lua')

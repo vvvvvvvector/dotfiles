@@ -37,17 +37,40 @@ require("lazy").setup({
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate"
+		build = ":TSUpdate",
+		config = function() 
+			require("nvim-treesitter.configs").setup({ 
+				-- A list of parser names, or "all"
+				ensure_installed = {
+					"javascript", "typescript", "lua", "prisma", "html", "superhtml", "bash"
+				},
+
+				-- Install parsers synchronously (only applied to `ensure_installed`)
+				sync_install = false,
+
+				-- Automatically install missing parsers when entering buffer
+				-- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
+				auto_install = false,
+
+				indent = {
+					enable = true
+				},
+
+				highlight = {
+					enable = false,
+				},
+			})
+		end
 	},
 
-	{
-		"folke/tokyonight.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme tokyonight-moon]])
-		end,
+	{ 
+		"catppuccin/nvim", 
+		name = "catppuccin",
+		priority = 1000 ,
+		-- optionally set the colorscheme within lazy config
+		init = function()
+			vim.cmd("colorscheme catppuccin")
+		end
 	},
 
 	{
@@ -62,19 +85,23 @@ require("lazy").setup({
 	},
 
 	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {
-		},
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
+		'neovim/nvim-lspconfig'
+	},
+
+	{
+		'hrsh7th/cmp-nvim-lsp'
+	},
+
+	{
+		'hrsh7th/nvim-cmp'
+	},
+
+ 	{
+		'williamboman/mason.nvim'
+	},
+
+  {
+		'williamboman/mason-lspconfig.nvim'
 	},
 
 	checker = { enabled = true },
