@@ -6,6 +6,8 @@ vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "No highlight" })
+vim.keymap.set("n", "<leader>ww", ":set wrap<cr>", { desc = "Set word wrap" })
+vim.keymap.set("n", "<leader>nw", ":set nowrap<cr>", { desc = "Set word no wrap" })
 
 vim.keymap.set("n", "<leader>to", ":tabnew<cr>", { desc = "Open new tab" }) 
 vim.keymap.set("n", "<leader>tw", ":tabclose<cr>", { desc = "Close current tab" })

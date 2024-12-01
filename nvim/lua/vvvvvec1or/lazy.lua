@@ -1,147 +1,151 @@
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-	{
-		"nvim-telescope/telescope.nvim", 
+  {
+    "nvim-telescope/telescope.nvim", 
 
-		tag = "0.1.8",
+    tag = "0.1.8",
 
-		dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
 
-		config = function()
-			require('telescope').setup({})
+    config = function()
+      require('telescope').setup({})
 
-			local builtin = require('telescope.builtin')
-			vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Open Telescope" })
-			vim.keymap.set('n', '<leader>pq', function()
-				builtin.grep_string({ search = vim.fn.input("Grep > ") })
-			end, { desc = "Telescope grep string" })
-		end
-	},
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Open Telescope" })
+      vim.keymap.set('n', '<leader>pq', function()
+        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+      end, { desc = "Telescope grep string" })
+    end
+  },
 
-	{
-		"nvim-treesitter/nvim-treesitter",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { 
-					"c", "lua", "vim", "vimdoc", "query", 
-					"typescript", "javascript", "tsx",
-					"sql", "prisma", "json", "jsonc",
-				},
+  {
+    "nvim-treesitter/nvim-treesitter",
 
-				auto_install = true,
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { 
+          "c", "lua", "vim", "vimdoc", "query", 
+          "typescript", "javascript", "tsx",
+          "sql", "prisma", "json", "jsonc",
+        },
 
-				highlight = {
-					enable = true,
-				},
+        auto_install = true,
 
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						-- init_selection = "<leader>is", 		
-						node_incremental = "<leader>si",
-						scope_incremental = "<leader>ss",
-						node_decremental = "<leader>sd",
-					},
-				},
+        highlight = {
+          enable = true,
+        },
 
-				textobjects = {
-					select = {
-						enable = true,
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            -- init_selection = "<leader>is", 		
+            node_incremental = "<leader>si",
+            scope_incremental = "<leader>ss",
+            node_decremental = "<leader>sd",
+          },
+        },
 
-						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+        textobjects = {
+          select = {
+            enable = true,
 
-						keymaps = {
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
+            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
 
-							["al"] = "@loop.outer",
-							["il"] = "@loop.inner",
-						},
+            keymaps = {
+              ["af"] = "@function.outer",
+              ["if"] = "@function.inner",
 
-						-- v -> charwise; V -> linewise
-						selection_modes = {
-							['@function.outer'] = 'v',  
+              ["al"] = "@loop.outer",
+              ["il"] = "@loop.inner",
+            },
 
-							['@loop.outer'] = 'v',  
-						},
+            -- v -> charwise; V -> linewise
+            selection_modes = {
+              ['@function.outer'] = 'v',  
 
-						-- If you set this to `true` (default is `false`) then any textobject is
-						-- extended to include preceding or succeeding whitespace. Succeeding
-						-- whitespace has priority in order to act similarly to eg the built-in
-						-- `ap`.
-						--
-						-- Can also be a function which gets passed a table with the keys
-						-- * query_string: eg '@function.inner'
-						-- * selection_mode: eg 'v'
-						-- and should return true or false
-						include_surrounding_whitespace = true,
-					},
-				},
-			})
-		end,
-	},
+              ['@loop.outer'] = 'v',  
+            },
 
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects"
-	},
+            -- If you set this to `true` (default is `false`) then any textobject is
+            -- extended to include preceding or succeeding whitespace. Succeeding
+            -- whitespace has priority in order to act similarly to eg the built-in
+            -- `ap`.
+            --
+            -- Can also be a function which gets passed a table with the keys
+            -- * query_string: eg '@function.inner'
+            -- * selection_mode: eg 'v'
+            -- and should return true or false
+            include_surrounding_whitespace = true,
+          },
+        },
+      })
+    end,
+  },
 
-	{ 
-		"catppuccin/nvim", 
-		name = "catppuccin",
-		priority = 1000 ,
-		-- optionally set the colorscheme within lazy config
-		init = function()
-			vim.cmd("colorscheme catppuccin")
-		end
-	},
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects"
+  },
 
-	{
-		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end
-	},
+  { 
+    "catppuccin/nvim", 
 
-	{
-		'neovim/nvim-lspconfig'
-	},
+    name = "catppuccin",
 
-	{
-		'hrsh7th/cmp-nvim-lsp'
-	},
+    priority = 1000 ,
 
-	{
-		'hrsh7th/nvim-cmp'
-	},
+    -- optionally set the colorscheme within lazy config
+    init = function()
+      vim.cmd("colorscheme catppuccin")
+    end
+  },
 
-	{
-		'williamboman/mason.nvim'
-	},
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
 
-	{
-		'williamboman/mason-lspconfig.nvim'
-	},
+  {
+    'neovim/nvim-lspconfig'
+  },
 
-	checker = { enabled = true },
+  {
+    'hrsh7th/cmp-nvim-lsp'
+  },
+
+  {
+    'hrsh7th/nvim-cmp'
+  },
+
+  {
+    'williamboman/mason.nvim'
+  },
+
+  {
+    'williamboman/mason-lspconfig.nvim'
+  },
+
+  checker = { enabled = true },
 })
