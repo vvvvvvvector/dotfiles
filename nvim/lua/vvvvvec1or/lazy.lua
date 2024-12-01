@@ -49,9 +49,57 @@ require("lazy").setup({
 
 				highlight = {
 					enable = true,
-				}
+				},
+
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						-- init_selection = "<leader>is", 		
+						node_incremental = "<leader>si",
+						scope_incremental = "<leader>ss",
+						node_decremental = "<leader>sd",
+					},
+				},
+
+				textobjects = {
+					select = {
+						enable = true,
+
+						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+
+							["al"] = "@loop.outer",
+							["il"] = "@loop.inner",
+						},
+
+						-- v -> charwise; V -> linewise
+						selection_modes = {
+							['@function.outer'] = 'v',  
+
+							['@loop.outer'] = 'v',  
+						},
+
+						-- If you set this to `true` (default is `false`) then any textobject is
+						-- extended to include preceding or succeeding whitespace. Succeeding
+						-- whitespace has priority in order to act similarly to eg the built-in
+						-- `ap`.
+						--
+						-- Can also be a function which gets passed a table with the keys
+						-- * query_string: eg '@function.inner'
+						-- * selection_mode: eg 'v'
+						-- and should return true or false
+						include_surrounding_whitespace = true,
+					},
+				},
 			})
 		end,
+	},
+
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects"
 	},
 
 	{ 
@@ -87,11 +135,11 @@ require("lazy").setup({
 		'hrsh7th/nvim-cmp'
 	},
 
- 	{
+	{
 		'williamboman/mason.nvim'
 	},
 
-  {
+	{
 		'williamboman/mason-lspconfig.nvim'
 	},
 
