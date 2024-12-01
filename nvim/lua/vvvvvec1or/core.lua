@@ -20,3 +20,12 @@ vim.g.netrw_banner = 0
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = 'yes'
+
+vim.api.nvim_set_hl(0, 'HighlightYank', { bg = '#6366f1' })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank { higroup = 'HighlightYank', timeout = 450 }
+  end,
+})
+
