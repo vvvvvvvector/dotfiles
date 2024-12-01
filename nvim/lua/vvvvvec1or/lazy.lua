@@ -22,17 +22,31 @@ require("lazy").setup({
 
     tag = "0.1.8",
 
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons" 
+    },
 
     config = function()
-      require('telescope').setup({})
+      local telescope = require("telescope")
 
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Open Telescope" })
-      vim.keymap.set('n', '<leader>pq', function()
-        builtin.grep_string({ search = vim.fn.input("Grep > ") })
-      end, { desc = "Telescope grep string" })
-    end
+      telescope.setup({
+        defaults = {
+          layout_strategy = "horizontal",
+          path_display = { 
+            truncate = 2
+          },
+          layout_config = {
+            width = 0.90,
+            height = 0.90,
+            preview_width = 0.575 
+          },
+        },
+      })
+
+      vim.keymap.set('n', '<leader>pf', "<cmd>Telescope find_files<cr>", { desc = "Open Telescope" })
+      vim.keymap.set('n', '<leader>pq', "<cmd>Telescope grep_string<cr>")
+    end,
   },
 
   {

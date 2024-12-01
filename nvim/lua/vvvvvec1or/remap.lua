@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>ex', vim.cmd.Ex, { desc = "Explorer" })
+vim.keymap.set('n', '<leader>ex', vim.cmd.Ex, { desc = "Open explorer" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
