@@ -24,11 +24,13 @@ require("lazy").setup({
 
     dependencies = { 
       "nvim-lua/plenary.nvim",
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       "nvim-tree/nvim-web-devicons" 
     },
 
     config = function()
       local telescope = require("telescope")
+      local actions = require("telescope.actions")
 
       telescope.setup({
         defaults = {
@@ -41,8 +43,16 @@ require("lazy").setup({
             height = 0.90,
             preview_width = 0.575 
           },
+          mappings = {
+            i = {
+              ["<C-k>"] = actions.move_selection_previous, 
+              ["<C-j>"] = actions.move_selection_next, 
+            }
+          }
         },
       })
+
+      telescope.load_extension("fzf")
 
       vim.keymap.set('n', '<leader>pf', "<cmd>Telescope find_files<cr>", { desc = "Open Telescope" })
       vim.keymap.set('n', '<leader>pq', "<cmd>Telescope grep_string<cr>")
@@ -132,8 +142,11 @@ require("lazy").setup({
 
   {
     "kylechui/nvim-surround",
+
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
+
     event = "VeryLazy",
+
     config = function()
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
