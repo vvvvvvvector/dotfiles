@@ -64,8 +64,8 @@ require("lazy").setup({
 
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { 
-          "c", "lua", "vim", "vimdoc", "query", 
+        ensure_installed = {
+          "c", "lua", "vim", "vimdoc", "query",
           "typescript", "javascript", "tsx",
           "sql", "prisma", "json", "jsonc",
         },
@@ -102,9 +102,9 @@ require("lazy").setup({
 
             -- v -> charwise; V -> linewise
             selection_modes = {
-              ['@function.outer'] = 'v',  
+              ['@function.outer'] = 'v',
 
-              ['@loop.outer'] = 'v',  
+              ['@loop.outer'] = 'v',
             },
 
             -- If you set this to `true` (default is `false`) then any textobject is
@@ -127,8 +127,8 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-textobjects"
   },
 
-  { 
-    "catppuccin/nvim", 
+  {
+    "catppuccin/nvim",
 
     name = "catppuccin",
 
@@ -167,11 +167,35 @@ require("lazy").setup({
   },
 
   {
-    'williamboman/mason.nvim'
+    "williamboman/mason.nvim",
+
+    config = function()
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✅",
+            package_pending = "->",
+            package_uninstalled = "❌"
+          }
+        }
+      })
+    end
   },
 
   {
-    'williamboman/mason-lspconfig.nvim'
+    'williamboman/mason-lspconfig.nvim',
+
+    dependencies = { "williamboman/mason.nvim" },
+
+    config = function()
+      require('mason-lspconfig').setup({
+        handlers = {
+          function(server_name)
+            require('lspconfig')[server_name].setup({})
+          end,
+        },
+      })
+    end
   },
 
   checker = { enabled = true },

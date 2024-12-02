@@ -15,6 +15,7 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 -- if there is a language server active in the file
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
+
   callback = function(event)
     local opts = { buffer = event.buf }
 
@@ -31,21 +32,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  },
-})
-
 local cmp = require('cmp')
 
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
   },
+
   mapping = cmp.mapping.preset.insert({
     -- Navigate between completion items
     ['<C-p>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
@@ -60,6 +53,7 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
+
   snippet = {
     expand = function(args)
       vim.snippet.expand(args.body)
