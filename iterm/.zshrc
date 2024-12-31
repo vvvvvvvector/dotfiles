@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -225,3 +225,27 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 
 # -----------------zoxide-----------------
+
+. "$HOME/.local/bin/env"
+
+
+
+# -----------------vi-mode-----------------
+
+export KEYTIMEOUT=1
+
+VI_MODE_SET_CURSOR=true
+
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+
+# Start in the normal mode
+autoload -Uz add-zle-hook-widget
+add-zle-hook-widget line-init vi-cmd-mode
+
+# -----------------vi-mode-----------------
+
+# -----------------zsh-autosuggestions-----------------
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8b5cf6,bold,underline"
+
+# -----------------zsh-autosuggestions-----------------
