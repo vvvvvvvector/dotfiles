@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -154,56 +154,56 @@ export FZF_CTRL_T_OPTS="
 
 # -----------------fzf-git-----------------
 
-[ -f ~/.fzf-git.sh ] && source ~/.fzf-git.sh
-
-_fzf_git_fzf() {
-  fzf-tmux -- \
-    --layout=reverse --multi --height=100% --border \
-    --border-label-pos=2 \
-    --color='header:italic:underline,label:blue' \
-    --preview-window='bottom,70%,border-top' \
-    --bind='ctrl-/:change-preview-window(right,65%,border-left|hidden|)' "$@"
-}
-
-_fzf_git_remotes() {
-  _fzf_git_check || return
-  git remote -v | awk '{print $1 "\t" $2}' | uniq |
-  _fzf_git_fzf --tac \
-    --border-label 'Remotes' \
-    --header $'CTRL-O (open in browser)\n\n' \
-    --bind "ctrl-o:execute-silent:bash $__fzf_git remote {1}" \
-    --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' '{1}/$(git rev-parse --abbrev-ref HEAD)' --" "$@" |
-  cut -d$'\t' -f1
-}
-
-_fzf_git_branches() {
-  _fzf_git_check || return
-  bash "$__fzf_git" branches |
-  _fzf_git_fzf --ansi \
-    --border-label 'Branches' \
-    --header-lines 2 \
-    --tiebreak begin \
-    --color hl:underline,hl+:underline \
-    --no-hscroll \
-    --bind "ctrl-o:execute-silent:bash $__fzf_git branch {}" \
-    --bind "alt-a:change-border-label(All branches)+reload:bash \"$__fzf_git\" all-branches" \
-    --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' \$(sed s/^..// <<< {} | cut -d' ' -f1) --" "$@" |
-  sed 's/^..//' | cut -d' ' -f1
-}
-
-_fzf_git_hashes() {
-  _fzf_git_check || return
-  bash "$__fzf_git" hashes |
-  _fzf_git_fzf --ansi --no-sort --bind 'ctrl-s:toggle-sort' \
-    --border-label 'Hashes' \
-    --header-lines 3 \
-    --bind "ctrl-o:execute-silent:bash $__fzf_git commit {}" \
-    --bind "ctrl-d:execute:grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git diff --color=$(__fzf_git_color) > /dev/tty" \
-    --bind "alt-a:change-border-label(All hashes)+reload:bash \"$__fzf_git\" all-hashes" \
-    --color hl:underline,hl+:underline \
-    --preview "grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git show --color=$(__fzf_git_color .) | $(__fzf_git_pager)" "$@" |
-  awk 'match($0, /[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]*/) { print substr($0, RSTART, RLENGTH) }'
-}
+# [ -f ~/.fzf-git.sh ] && source ~/.fzf-git.sh
+#
+# _fzf_git_fzf() {
+#   fzf-tmux -- \
+#     --layout=reverse --multi --height=100% --border \
+#     --border-label-pos=2 \
+#     --color='header:italic:underline,label:blue' \
+#     --preview-window='bottom,70%,border-top' \
+#     --bind='ctrl-/:change-preview-window(right,65%,border-left|hidden|)' "$@"
+# }
+#
+# _fzf_git_remotes() {
+#   _fzf_git_check || return
+#   git remote -v | awk '{print $1 "\t" $2}' | uniq |
+#   _fzf_git_fzf --tac \
+#     --border-label 'Remotes' \
+#     --header $'CTRL-O (open in browser)\n\n' \
+#     --bind "ctrl-o:execute-silent:bash $__fzf_git remote {1}" \
+#     --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' '{1}/$(git rev-parse --abbrev-ref HEAD)' --" "$@" |
+#   cut -d$'\t' -f1
+# }
+#
+# _fzf_git_branches() {
+#   _fzf_git_check || return
+#   bash "$__fzf_git" branches |
+#   _fzf_git_fzf --ansi \
+#     --border-label 'Branches' \
+#     --header-lines 2 \
+#     --tiebreak begin \
+#     --color hl:underline,hl+:underline \
+#     --no-hscroll \
+#     --bind "ctrl-o:execute-silent:bash $__fzf_git branch {}" \
+#     --bind "alt-a:change-border-label(All branches)+reload:bash \"$__fzf_git\" all-branches" \
+#     --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' \$(sed s/^..// <<< {} | cut -d' ' -f1) --" "$@" |
+#   sed 's/^..//' | cut -d' ' -f1
+# }
+#
+# _fzf_git_hashes() {
+#   _fzf_git_check || return
+#   bash "$__fzf_git" hashes |
+#   _fzf_git_fzf --ansi --no-sort --bind 'ctrl-s:toggle-sort' \
+#     --border-label 'Hashes' \
+#     --header-lines 3 \
+#     --bind "ctrl-o:execute-silent:bash $__fzf_git commit {}" \
+#     --bind "ctrl-d:execute:grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git diff --color=$(__fzf_git_color) > /dev/tty" \
+#     --bind "alt-a:change-border-label(All hashes)+reload:bash \"$__fzf_git\" all-hashes" \
+#     --color hl:underline,hl+:underline \
+#     --preview "grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git show --color=$(__fzf_git_color .) | $(__fzf_git_pager)" "$@" |
+#   awk 'match($0, /[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]*/) { print substr($0, RSTART, RLENGTH) }'
+# }
 
 # -----------------fzf-git-----------------
 
@@ -228,24 +228,32 @@ eval "$(zoxide init zsh)"
 
 . "$HOME/.local/bin/env"
 
-
-
 # -----------------vi-mode-----------------
 
-export KEYTIMEOUT=1
+# export KEYTIMEOUT=1
 
-VI_MODE_SET_CURSOR=true
+# VI_MODE_SET_CURSOR=true
 
-VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+# VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 # Start in the normal mode
-autoload -Uz add-zle-hook-widget
-add-zle-hook-widget line-init vi-cmd-mode
+# autoload -Uz add-zle-hook-widget
+# add-zle-hook-widget line-init vi-cmd-mode
 
 # -----------------vi-mode-----------------
+
+# -----------------zsh-vi-mode-----------------
+
+ZVM_VI_EDITOR=nvim
+
+ZVM_VI_HIGHLIGHT_FOREGROUND=#fafafa
+ZVM_VI_HIGHLIGHT_BACKGROUND=#4f46e5
+ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
+
+# -----------------zsh-vi-mode-----------------
 
 # -----------------zsh-autosuggestions-----------------
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8b5cf6,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#818cf8,bold,underline"
 
 # -----------------zsh-autosuggestions-----------------
