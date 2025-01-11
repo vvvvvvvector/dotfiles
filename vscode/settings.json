@@ -17,7 +17,6 @@
     "editor.cursorWidth": 1,
     "totalTypeScript.hideAllTips": false,
     "totalTypeScript.hideBasicTips": true,
-    "workbench.panel.showLabels": false,
     "workbench.productIconTheme": "feather-vscode",
     "workbench.colorTheme": "poimandres-storm",
     "workbench.iconTheme": "catppuccin-frappe",
@@ -32,7 +31,7 @@
     "terminal.integrated.tabs.defaultColor": "terminal.ansiCyan",
     "terminal.integrated.fontSize": 12.5,
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorStyle": "block",
     "terminal.integrated.cursorStyleInactive": "underline",
     "terminal.integrated.allowChords": false,
     "typescript.inlayHints.parameterNames.enabled": "all",
@@ -109,8 +108,6 @@
         "extract-utility-type"
     ],
     "window.confirmBeforeClose": "always",
-    "prettify-ts.enableHover": false,
-    "prettify-ts.viewNestedTypes": true,
     "editor.accessibilitySupport": "off",
     "editor.lineNumbers": "relative",
     "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
@@ -169,7 +166,7 @@
         {
             "before": [
                 "g",
-                "h"
+                "H",
             ],
             "commands": [
                 "editor.action.showDefinitionPreviewHover"
@@ -254,4 +251,5 @@
             ]
         },
     ],
+    "workbench.panel.showLabels": false,
 }
