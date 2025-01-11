@@ -250,6 +250,10 @@ ZVM_VI_HIGHLIGHT_FOREGROUND=#fafafa
 ZVM_VI_HIGHLIGHT_BACKGROUND=#4f46e5
 ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
 
+# to not use bck-i-search on insert mode
+function zvm_after_init() {
+  zvm_bindkey viins "^R" fzf-history-widget
+}
 # -----------------zsh-vi-mode-----------------
 
 # -----------------zsh-autosuggestions-----------------
