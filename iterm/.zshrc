@@ -98,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+
 # -----------------aliases-----------------
 
 # alias zshconfig="mate ~/.zshrc"
@@ -254,6 +257,7 @@ ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
 }
+
 # -----------------zsh-vi-mode-----------------
 
 # -----------------zsh-autosuggestions-----------------
