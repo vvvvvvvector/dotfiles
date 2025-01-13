@@ -252,4 +252,5 @@
         },
     ],
     "workbench.panel.showLabels": false,
+    "vim.showMarksInGutter": true,
 }
