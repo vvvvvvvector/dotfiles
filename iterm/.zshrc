@@ -256,6 +256,7 @@ ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
 # to not use bck-i-search on insert mode
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
+  zvm_bindkey viins "^I" fzf-completion
 }
 
 # -----------------zsh-vi-mode-----------------
