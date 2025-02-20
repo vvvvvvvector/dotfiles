@@ -253,4 +253,25 @@
     ],
     "workbench.panel.showLabels": false,
     "vim.showMarksInGutter": true,
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "cva\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        [
+            "cx\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+        ],
+        [
+            "clsx\\(.*?\\)(?!\\])",
+            "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"
+        ],
+        [
+            "(?:twMerge|twJoin)\\(([^;]*)[\\);]",
+            "[`'\"`]([^'\"`;]*)[`'\"`]"
+        ]
+    ],
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.preferredDarkColorTheme": "poimandres-storm"
 }
