@@ -1,0 +1,7 @@
+[user]
+	name = Viktar Zhdanovich
+	email = viktorzhdanovich@gmail.com
+[core]
+	editor = code --wait
+[branch]
+	sort = -committerdate
