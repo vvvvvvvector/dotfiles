@@ -799,6 +799,16 @@
         "command": "-workbench.action.toggleEditorGroupLayout"
     },
     {
+        "key": "g g",
+        "command": "editor.action.goToTopHover",
+        "when": "editorHoverFocused",
+    },
+    {
+        "key": "shift+g",
+        "command": "editor.action.goToBottomHover",
+        "when": "editorHoverFocused",
+    },
+    {
         "key": "ctrl+u",
         "command": "editor.action.pageUpHover",
         "when": "editorHoverFocused",
