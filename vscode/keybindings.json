@@ -799,6 +799,16 @@
         "command": "-workbench.action.toggleEditorGroupLayout"
     },
     {
+        "key": "ctrl+u",
+        "command": "editor.action.pageUpHover",
+        "when": "editorHoverFocused",
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.pageDownHover",
+        "when": "editorHoverFocused",
+    },
+    {
         "key": "h",
         "command": "editor.action.scrollLeftHover",
         "when": "editorHoverFocused"
@@ -1310,5 +1320,9 @@
         "key": "alt+down",
         "command": "-notebook.cell.moveDown",
         "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "cmd+r cmd+t",
+        "command": "editor.emmet.action.removeTag"
     }
 ]
