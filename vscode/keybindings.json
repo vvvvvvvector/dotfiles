@@ -617,7 +617,7 @@
                 {
                     "command": "workbench.action.terminal.sendSequence",
                     "args": {
-                        "text": "sh ~/Github/dotfiles/tmux/vscode_session.sh\u000D"
+                        "text": "sesh-mgr --vscode\u000D"
                     }
                 },
             ]
@@ -1099,15 +1099,21 @@
                 {
                     "command": "workbench.action.createTerminalEditor",
                 },
+                // {
+                //     "command": "workbench.action.terminal.sendSequence",
+                //     "args": {
+                //         "text": "lg\u000D"
+                //     }
+                // },
                 {
                     "command": "workbench.action.terminal.sendSequence",
                     "args": {
-                        "text": "lg\u000D"
+                        "text": "sesh-mgr --vscode 'lazygit'\u000D"
                     }
                 },
-                {
-                    "command": "workbench.action.closeSidebar",
-                },
+                // {
+                //     "command": "workbench.action.closeSidebar",
+                // },
             ]
         }
     },
