@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -218,7 +218,7 @@ export BAT_THEME="Visual Studio Dark+"
 
 # -----------------thefuck-----------------
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # -----------------thefuck-----------------
 
@@ -266,3 +266,16 @@ function zvm_after_init() {
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#818cf8,bold,underline"
 
 # -----------------zsh-autosuggestions-----------------
+
+
+# -----------------fzf-tab-----------------
+
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# -----------------fzf-tab-----------------
+
+# -----------------tmux-----------------
+
+export PATH=$PATH:~/Github/dotfiles/tmux
+
+# -----------------tmux-----------------
