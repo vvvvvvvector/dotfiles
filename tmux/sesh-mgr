@@ -1,11 +1,12 @@
 #!/bin/bash
 
-if [ "$#" -ne 1 ]; then
-    echo "The script accept only one of these params: --main | --vscode"
+SESSION=""
+TARGET_WINDOW=1
+
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+    echo "[Err]: available params: --main | --vscode [<target_window>]"
     exit 1
 fi
-
-SESSION=""
 
 case $1 in
     --vscode)
@@ -20,19 +21,24 @@ case $1 in
         ;;
 esac
 
+
+if [ "$#" -eq 2 ]; then
+    TARGET_WINDOW=$2
+fi
+
 tmux has-session -t $SESSION 2>/dev/null
 
 if [ $? != 0 ]; then
     case $SESSION in
         ghostty)
             tmux new -d -s $SESSION -n "work"
-            tmux send-keys -t 'work' "cd ~/Work" C-m 
+            tmux send-keys -t 'work' "cd ~/Work" C-m "clear" C-m
 
             tmux new-window -t $SESSION:2 -n "tmp_1"
-            tmux send-keys -t "tmp_1" "cd /tmp" C-m 
+            tmux send-keys -t "tmp_1" "cd /tmp" C-m "clear" C-m
 
             tmux new-window -t $SESSION:3 -n "tmp_2"
-            tmux send-keys -t "tmp_2" "cd /tmp" C-m 
+            tmux send-keys -t "tmp_2" "cd /tmp" C-m "clear" C-m
 
             ;;
         vscode)
@@ -45,9 +51,11 @@ if [ $? != 0 ]; then
 
             tmux new-window -t $SESSION:3 -n "studio"
 
+            tmux new-window -t $SESSION:4 -n "lazygit"
+            tmux send-keys -t "lazygit" "lg" C-m 
+
             ;;
     esac
 fi
 
-tmux attach-session -t $SESSION:1
-
+tmux attach-session -t $SESSION:$TARGET_WINDOW
