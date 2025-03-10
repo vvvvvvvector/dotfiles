@@ -1,0 +1,53 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "The script accept only one of these params: --main | --vscode"
+    exit 1
+fi
+
+SESSION=""
+
+case $1 in
+    --vscode)
+        SESSION="vscode"
+        ;;
+    --main)
+        SESSION="ghostty"
+        ;;
+    *)
+        echo "Invalid option: $1"
+        exit 1
+        ;;
+esac
+
+tmux has-session -t $SESSION 2>/dev/null
+
+if [ $? != 0 ]; then
+    case $SESSION in
+        ghostty)
+            tmux new -d -s $SESSION -n "work"
+            tmux send-keys -t 'work' "cd ~/Work" C-m 
+
+            tmux new-window -t $SESSION:2 -n "tmp_1"
+            tmux send-keys -t "tmp_1" "cd /tmp" C-m 
+
+            tmux new-window -t $SESSION:3 -n "tmp_2"
+            tmux send-keys -t "tmp_2" "cd /tmp" C-m 
+
+            ;;
+        vscode)
+            tmux new -d -s $SESSION
+            tmux split-window -h
+            tmux split-window -v
+            tmux select-pane -t 1
+
+            tmux new-window -t $SESSION:2 -n "dev"
+
+            tmux new-window -t $SESSION:3 -n "studio"
+
+            ;;
+    esac
+fi
+
+tmux attach-session -t $SESSION:1
+
