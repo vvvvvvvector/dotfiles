@@ -11,11 +11,6 @@ vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "No highlight" })
 vim.keymap.set("n", "<leader>ww", ":set wrap<cr>", { desc = "Set word wrap" })
 vim.keymap.set("n", "<leader>nw", ":set nowrap<cr>", { desc = "Set word no wrap" })
 
-vim.keymap.set("n", "<leader>to", ":tabnew<cr>", { desc = "Open new tab" })
-vim.keymap.set("n", "<leader>tw", ":tabclose<cr>", { desc = "Close current tab" })
-vim.keymap.set("n", "<leader>t]", ":tabn<cr>", { desc = "Go to next tab" })
-vim.keymap.set("n", "<leader>t[", ":tabp<cr>", { desc = "Go to previous tab" })
-
 vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run the line under cursor" })
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run the current file" })
 

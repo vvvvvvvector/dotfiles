@@ -48,7 +48,7 @@ return {
 
       vim.keymap.set('n', '<leader>pf', function()
         require("telescope.builtin").find_files({
-          find_command = { "fd", "-H", "-E", ".git", "--type", "f" }
+          find_command = { 'fd', '-H', '-E', '.git', '--type', 'f' }
         })
       end, { desc = "Open Telescope" })
 
