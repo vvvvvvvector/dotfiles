@@ -1,6 +1,6 @@
 require('config')
 
-vim.keymap.set('n', '<leader>fx', vim.cmd.Ex, { desc = "Open explorer" })
+vim.keymap.set('n', '<leader>fx', "<cmd>Oil --float<cr>", { desc = "Open oil" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
