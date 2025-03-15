@@ -4,6 +4,8 @@ theme = catppuccin-frappe
 
 quick-terminal-position = center
 
+window-padding-color = background
+
 window-title-font-family = "JetBrainsMono Nerd Font Mono"
 window-height = 33 
 window-width = 83
