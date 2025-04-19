@@ -84,6 +84,10 @@ require("lazy").setup({
 
       config = function()
         require('mason-lspconfig').setup({
+          automatic_installation = false,
+
+          ensure_installed = {},
+
           handlers = {
             function(server_name)
               require('lspconfig')[server_name].setup({})

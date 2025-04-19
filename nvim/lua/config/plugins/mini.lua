@@ -5,11 +5,9 @@ return {
     version = false,
 
     config = function()
-      local statusline = require('mini.statusline')
-      statusline.setup({ use_icons = true })
+      require('mini.cursorword').setup()
 
-      local cursorword = require('mini.cursorword')
-      cursorword.setup()
+      require('mini.ai').setup()
     end
   },
 }

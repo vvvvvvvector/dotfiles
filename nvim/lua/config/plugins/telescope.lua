@@ -28,6 +28,8 @@ return {
 
               ["J"] = actions.preview_scrolling_down,
               ["K"] = actions.preview_scrolling_up,
+
+              ["<C-h>"] = actions.select_horizontal,
             }
           },
           extensions = {

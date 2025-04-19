@@ -1,12 +1,28 @@
+local detail = false
+
 return {
   'stevearc/oil.nvim',
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
+    delete_to_trash = true,
     float = {
-      max_width = 60,
-      max_height = 60,
       border = "rounded",
+      preview_split = "right"
+    },
+    keymaps = {
+      ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+      ["gd"] = {
+        desc = "Toggle file detail view",
+        callback = function()
+          detail = not detail
+          if detail then
+            require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+          else
+            require("oil").set_columns({ "icon" })
+          end
+        end,
+      },
     },
   },
   -- Optional dependencies
