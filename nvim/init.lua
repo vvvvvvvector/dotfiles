@@ -1,6 +1,6 @@
 require('config')
 
-vim.keymap.set('n', '<leader>fx', "<cmd>Oil --float<cr>", { desc = "Open oil" })
+vim.keymap.set('n', '<leader>fx', "<cmd>Oil<cr>", { desc = "Open oil" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -8,11 +8,23 @@ vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "No highlight" })
-vim.keymap.set("n", "<leader>ww", ":set wrap<cr>", { desc = "Set word wrap" })
-vim.keymap.set("n", "<leader>nw", ":set nowrap<cr>", { desc = "Set word no wrap" })
 
-vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run the line under cursor" })
+local toggle_word_wrap = function()
+  if vim.wo.wrap then
+    vim.cmd("set nowrap")
+  else
+    vim.cmd("set wrap")
+  end
+end
+
+-- print(vim.inspect(vim.wo.wrap))
+
+vim.api.nvim_create_user_command("ToggleWordWrap", toggle_word_wrap, {})
+vim.keymap.set("n", "<leader>rw", toggle_word_wrap, { desc = "Toggle word wrap" })
+
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run the current file" })
+vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run the line under cursor" })
+vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute selection" })
 
 vim.cmd('language en_US')
 
@@ -33,9 +45,9 @@ vim.opt.clipboard = 'unnamedplus'
 
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
--- vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
-vim.api.nvim_set_hl(0, 'HighlightYank', { bg = '#6366f1' })
+vim.api.nvim_set_hl(0, 'HighlightYank', { bg = '#6366f1', bold = true })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()

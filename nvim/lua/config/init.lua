@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set('n', '<leader>kd', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+    vim.keymap.set('n', '<leader>kD', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end,
 })
@@ -36,10 +36,6 @@ cmp.setup({
   },
 
   mapping = cmp.mapping.preset.insert({
-    -- Navigate between completion items
-    ['<C-k>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
-    ['<C-j>'] = cmp.mapping.select_next_item({behavior = 'select'}),
-
     -- Scroll up and down in the completion documentation
     ['K'] = cmp.mapping.scroll_docs(-4),
     ['J'] = cmp.mapping.scroll_docs(4),
