@@ -63,6 +63,8 @@ return {
 
         require("telescope.builtin").lsp_references(opts)
       end, { desc = "Peek References" })
+
+      vim.keymap.set('n', '<leader>pd', require("telescope.builtin").diagnostics, { desc = "Open diagnostics" })
     end,
   },
 }

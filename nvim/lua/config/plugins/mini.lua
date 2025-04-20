@@ -8,6 +8,8 @@ return {
       require('mini.cursorword').setup()
 
       require('mini.ai').setup()
+
+      require('mini.diff').setup()
     end
   },
 }
