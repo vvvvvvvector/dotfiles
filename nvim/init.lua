@@ -1,13 +1,16 @@
 require('config')
 
+-- vim.cmd("colorscheme vague")
+
 vim.keymap.set('n', '<leader>fx', "<cmd>Oil<cr>", { desc = "Open oil" })
+vim.keymap.set('n', '<leader>d', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open oil" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
-vim.keymap.set("n", "<leader>nh", ":nohl<cr>", { desc = "No highlight" })
+vim.keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "No highlight" })
 
 local toggle_word_wrap = function()
   if vim.wo.wrap then

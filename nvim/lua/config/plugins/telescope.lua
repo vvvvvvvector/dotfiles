@@ -19,7 +19,7 @@ return {
           layout_config = {
             width = 0.90,
             height = 0.90,
-            preview_width = 0.5
+            preview_width = 0.4
           },
           mappings = {
             i = {
@@ -30,6 +30,8 @@ return {
               ["K"] = actions.preview_scrolling_up,
 
               ["<C-h>"] = actions.select_horizontal,
+
+              -- ["<CR>"] = actions.select_tab
             }
           },
           extensions = {
@@ -54,7 +56,7 @@ return {
         })
       end, { desc = "Open Telescope" })
 
-      vim.keymap.set('n', '<leader>pq', require("telescope.builtin").grep_string, { desc = "Quick search" })
+      vim.keymap.set('n', '<leader>pq', require("telescope.builtin").live_grep, { desc = "Quick search" })
 
       vim.keymap.set('n', '<leader>pr', function()
         local opts = require("telescope.themes").get_ivy {
@@ -65,6 +67,12 @@ return {
       end, { desc = "Peek References" })
 
       vim.keymap.set('n', '<leader>pd', require("telescope.builtin").diagnostics, { desc = "Open diagnostics" })
+
+      vim.keymap.set('n', '<leader>pm', require("telescope.builtin").marks, { desc = "Marks" })
+
+      vim.keymap.set('n', '<leader>ds', require("telescope.builtin").lsp_document_symbols)
+
+      vim.keymap.set('n', '<leader>pb', require("telescope.builtin").buffers)
     end,
   },
 }

@@ -26,19 +26,6 @@ require("lazy").setup({
     },
 
     {
-      "catppuccin/nvim",
-
-      name = "catppuccin",
-
-      priority = 1000,
-
-      -- optionally set the colorscheme within lazy config
-      init = function()
-        vim.cmd("colorscheme catppuccin")
-      end
-    },
-
-    {
       'neovim/nvim-lspconfig',
 
       dependencies = {
