@@ -1,9 +1,9 @@
-require('config')
+require('config.lazy')
 
--- vim.cmd("colorscheme vague")
+-- vim.cmd("colorscheme cold")
 
-vim.keymap.set('n', '<leader>fx', "<cmd>Oil<cr>", { desc = "Open oil" })
-vim.keymap.set('n', '<leader>d', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open oil" })
+vim.keymap.set('n', '<leader>e', "<cmd>Oil<cr>", { desc = "Open oil" })
+vim.keymap.set('n', '<leader>,', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open oil" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -11,6 +11,9 @@ vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "No highlight" })
+
+vim.keymap.set("n", "<M-p>", "<cmd>cprev<cr>")
+vim.keymap.set("n", "<M-n>", "<cmd>cnext<cr>")
 
 local toggle_word_wrap = function()
   if vim.wo.wrap then
@@ -57,4 +60,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { higroup = 'HighlightYank', timeout = 450 }
   end,
 })
-
