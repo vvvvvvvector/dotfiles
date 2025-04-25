@@ -12,8 +12,11 @@ vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "No highlight" })
 
-vim.keymap.set("n", "<M-p>", "<cmd>cprev<cr>")
-vim.keymap.set("n", "<M-n>", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<cr>")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<cr>")
+
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>")
 
 local toggle_word_wrap = function()
   if vim.wo.wrap then
