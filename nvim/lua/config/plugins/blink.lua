@@ -16,14 +16,20 @@ return {
 
         ['<C-space>'] = {},
 
-        ['<C-j>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
+        ['<C-i>'] = { function(cmp) cmp.show({ providers = { 'lsp' } }) end },
+
+        ['<C-k>'] = { 'select_prev', 'fallback' },
+        ['<C-j>'] = { 'select_next', 'fallback' },
       },
 
       appearance = {
         nerd_font_variant = 'mono'
       },
 
-      completion = { documentation = { auto_show = false } },
+      completion = {
+        documentation = { auto_show = false },
+        ghost_text = { enabled = false }
+      },
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },

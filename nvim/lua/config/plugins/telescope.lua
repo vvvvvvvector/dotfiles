@@ -11,27 +11,26 @@ return {
     },
 
     config = function()
-      local actions = require("telescope.actions")
-
       require("telescope").setup({
         defaults = {
+          border = true,
           layout_strategy = "horizontal",
           layout_config = {
             width = 0.90,
             height = 0.90,
-            preview_width = 0.4
           },
+          dynamic_preview_title = true,
           mappings = {
             i = {
-              ["<C-k>"] = actions.move_selection_previous,
-              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = "move_selection_previous",
+              ["<C-j>"] = "move_selection_next",
 
-              ["J"] = actions.preview_scrolling_down,
-              ["K"] = actions.preview_scrolling_up,
+              ["J"] = "preview_scrolling_down",
+              ["K"] = "preview_scrolling_up",
 
-              ["<C-h>"] = actions.select_horizontal,
+              ["<C-h>"] = "select_horizontal",
 
-              -- ["<CR>"] = actions.select_tab
+              ["<C-X>"] = false,
             }
           },
           extensions = {
