@@ -10,6 +10,9 @@ return {
       border = "rounded",
       preview_split = "right"
     },
+    view_options = {
+      show_hidden = true
+    },
     keymaps = {
       ["<C-v>"] = { "actions.select", opts = { vertical = true } },
       ["gd"] = {

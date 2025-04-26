@@ -4,12 +4,12 @@ return {
 
     name = "catppuccin",
 
-    priority = 1000,
-
-    -- optionally set the colorscheme within lazy config
-    init = function()
-      vim.cmd("colorscheme catppuccin-mocha")
-    end
+    -- priority = 1000,
+    --
+    -- -- optionally set the colorscheme within lazy config
+    -- init = function()
+    --   vim.cmd("colorscheme catppuccin-mocha")
+    -- end
   },
   {
     "rose-pine/neovim",
@@ -27,6 +27,7 @@ return {
   {
     "vague2k/vague.nvim",
     config = function()
+      -- NOTE: you do not need to call setup if you don't want to.
       require("vague").setup({
         -- optional configuration here
       })

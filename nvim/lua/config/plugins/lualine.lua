@@ -29,7 +29,7 @@ return {
             return str:sub(1, 1)
           end
         } },
-        lualine_b = { { 'branch', icon = '' }, 'diff', { 'diagnostics', symbols = {} } },
+        lualine_b = { { 'branch', icon = '' }, 'diff', { 'diagnostics', symbols = {} } },
         lualine_c = { { 'filename', path = 0 }, },
         lualine_x = { 'searchcount', 'encoding', { 'filetype', colored = false } },
         lualine_y = { 'progress' },
