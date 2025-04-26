@@ -1,8 +1,8 @@
 local detail = false
 
 return {
-  'stevearc/oil.nvim',
-  ---@module 'oil'
+  "stevearc/oil.nvim",
+  ---@module "oil"
   ---@type oil.SetupOpts
   opts = {
     delete_to_trash = true,
@@ -15,6 +15,7 @@ return {
     },
     keymaps = {
       ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+
       ["gd"] = {
         desc = "Toggle file detail view",
         callback = function()

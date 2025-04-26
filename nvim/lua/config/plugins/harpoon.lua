@@ -1,6 +1,7 @@
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)
   local file_paths = {}
+
   for _, item in ipairs(harpoon_files.items) do
     table.insert(file_paths, item.value)
   end
@@ -26,7 +27,8 @@ return {
     harpoon:setup()
     -- REQUIRED
 
-    vim.keymap.set("n", "<leader>hf", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon menu toggle" })
+    vim.keymap.set("n", "<leader>hf", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+      { desc = "Harpoon menu toggle" })
 
     vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "Add file to Harpoon list" })
 
@@ -50,10 +52,25 @@ return {
         vim.keymap.set("n", "<C-t>", function()
           harpoon.ui:select_menu_item({ tabedit = true })
         end, { buffer = cx.bufnr })
+
+        vim.api.nvim_set_hl(0, "HarpoonLine", { fg = "#C48282", bg = "#141415", bold = true })
+
+        for line_number, file in pairs(cx.contents) do
+          if string.find(cx.current_file, file, 1, true) then
+            -- highlight the harpoon menu line that corresponds to the current buffer
+            vim.api.nvim_buf_add_highlight(
+              cx.bufnr,
+              -1,
+              "HarpoonLine",
+              line_number - 1,
+              0,
+              -1
+            )
+            -- set the position of the cursor in the harpoon menu to the start of the current buffer line
+            vim.api.nvim_win_set_cursor(cx.win_id, { line_number, 0 })
+          end
+        end
       end,
     })
-
-    local harpoon_extensions = require("harpoon.extensions")
-    harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
   end
 }

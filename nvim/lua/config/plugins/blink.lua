@@ -1,38 +1,44 @@
 return {
   {
-    'saghen/blink.cmp',
+    "saghen/blink.cmp",
 
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = { "rafamadriz/friendly-snippets" },
 
-    version = '1.*',
+    version = "1.*",
 
-    ---@module 'blink.cmp'
+    ---@module "blink.cmp"
     ---@type blink.cmp.Config
     opts = {
       signature = { enabled = true },
 
       keymap = {
-        preset = 'default',
+        preset = "default",
 
-        ['<C-space>'] = {},
+        ["<C-space>"] = {},
 
-        ['<C-i>'] = { function(cmp) cmp.show({ providers = { 'lsp' } }) end },
+        ["<C-i>"] = { function(cmp) cmp.show({ providers = { "lsp" } }) end },
 
-        ['<C-k>'] = { 'select_prev', 'fallback' },
-        ['<C-j>'] = { 'select_next', 'fallback' },
+        ["<C-k>"] = { "select_prev", "fallback" },
+        ["<C-j>"] = { "select_next", "fallback" },
       },
 
       appearance = {
-        nerd_font_variant = 'mono'
+        nerd_font_variant = "mono"
       },
 
       completion = {
         documentation = { auto_show = false },
-        ghost_text = { enabled = false }
+        ghost_text = { enabled = false },
+        menu = {
+          min_width = 20,
+          max_height = 12,
+          border = "rounded",
+          scrollbar = false -- Note that the gutter will be disabled when border ~= "none"
+        }
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = { "lsp", "path", "snippets", "buffer" },
       },
 
       fuzzy = { implementation = "prefer_rust_with_warning" },

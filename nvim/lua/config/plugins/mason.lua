@@ -3,32 +3,24 @@ return {
     "williamboman/mason.nvim",
 
     config = function()
-      require("mason").setup({
-        ui = {
-          icons = {
-            package_installed = "✅",
-            package_pending = "->",
-            package_uninstalled = "❌"
-          }
-        }
-      })
+      require("mason").setup()
     end
   },
 
   {
-    'williamboman/mason-lspconfig.nvim',
+    "williamboman/mason-lspconfig.nvim",
 
     dependencies = { "williamboman/mason.nvim" },
 
     config = function()
-      require('mason-lspconfig').setup({
+      require("mason-lspconfig").setup({
         automatic_installation = false,
 
-        ensure_installed = {},
+        ensure_installed = { "vtsls", "tailwindcss", "prismals" },
 
         handlers = {
           function(server_name)
-            require('lspconfig')[server_name].setup({})
+            require("lspconfig")[server_name].setup({})
           end,
         },
       })
