@@ -1,9 +1,11 @@
 require('config.lazy')
 
--- vim.cmd("colorscheme cold")
+vim.cmd("colorscheme vague")
 
 vim.keymap.set('n', '<leader>e', "<cmd>Oil<cr>", { desc = "Open oil" })
-vim.keymap.set('n', '<leader>,', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open oil" })
+vim.keymap.set('n', '<leader>,', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open diagnostic float" })
+
+vim.keymap.set("n", "<leader>zm", ":ZenMode <CR>", { silent = true })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -31,9 +33,9 @@ end
 vim.api.nvim_create_user_command("ToggleWordWrap", toggle_word_wrap, {})
 vim.keymap.set("n", "<leader>rw", toggle_word_wrap, { desc = "Toggle word wrap" })
 
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run the current file" })
-vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run the line under cursor" })
-vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute selection" })
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current lua file" })
+vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run lua code line under cursor" })
+vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute lua selection" })
 
 vim.cmd('language en_US')
 
