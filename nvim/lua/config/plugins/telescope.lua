@@ -6,7 +6,7 @@ return {
 
     dependencies = {
       "nvim-lua/plenary.nvim",
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-tree/nvim-web-devicons"
     },
 
@@ -41,23 +41,23 @@ return {
 
       require("telescope").load_extension("fzf")
 
-      vim.keymap.set('n', '<leader>os', function()
+      vim.keymap.set("n", "<leader>os", function()
         require("telescope.builtin").find_files {
           cwd = vim.fn.stdpath("config")
         }
       end, { desc = "Open config" })
 
-      vim.keymap.set('n', '<leader>oh', require("telescope.builtin").help_tags, { desc = "Open help" })
+      vim.keymap.set("n", "<leader>oh", require("telescope.builtin").help_tags, { desc = "Open help" })
 
-      vim.keymap.set('n', '<leader>pf', function()
+      vim.keymap.set("n", "<leader>pf", function()
         require("telescope.builtin").find_files({
-          find_command = { 'fd', '-H', '-E', '.git', '--type', 'f' }
+          find_command = { "fd", "-H", "-E", ".git", "--type", "f" }
         })
       end, { desc = "Open Telescope" })
 
-      vim.keymap.set('n', '<leader>pq', require("telescope.builtin").live_grep, { desc = "Quick search" })
+      vim.keymap.set("n", "<leader>pq", require("telescope.builtin").live_grep, { desc = "Quick search" })
 
-      vim.keymap.set('n', '<leader>pr', function()
+      vim.keymap.set("n", "<leader>pr", function()
         local opts = require("telescope.themes").get_ivy {
           cwd = vim.fn.stdpath("config")
         }
@@ -65,13 +65,13 @@ return {
         require("telescope.builtin").lsp_references(opts)
       end, { desc = "Peek References" })
 
-      vim.keymap.set('n', '<leader>pd', require("telescope.builtin").diagnostics, { desc = "Open diagnostics" })
+      vim.keymap.set("n", "<leader>pd", require("telescope.builtin").diagnostics, { desc = "Open diagnostics" })
 
-      vim.keymap.set('n', '<leader>pm', require("telescope.builtin").marks, { desc = "Marks" })
+      vim.keymap.set("n", "<leader>pm", require("telescope.builtin").marks, { desc = "Marks" })
 
-      vim.keymap.set('n', '<leader>ds', require("telescope.builtin").lsp_document_symbols)
+      vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols)
 
-      vim.keymap.set('n', '<leader>pb', require("telescope.builtin").buffers)
+      vim.keymap.set("n", "<leader>pb", require("telescope.builtin").buffers)
     end,
   },
 }

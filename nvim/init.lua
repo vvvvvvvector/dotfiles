@@ -1,9 +1,9 @@
-require('config.lazy')
+require("config.lazy")
 
 vim.cmd("colorscheme vague")
 
-vim.keymap.set('n', '<leader>e', "<cmd>Oil<cr>", { desc = "Open oil" })
-vim.keymap.set('n', '<leader>,', "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open diagnostic float" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open oil" })
+vim.keymap.set("n", "<leader>,", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open diagnostic float" })
 
 vim.keymap.set("n", "<leader>zm", ":ZenMode <CR>", { silent = true })
 
@@ -19,6 +19,11 @@ vim.keymap.set("n", "<C-n>", "<cmd>cnext<cr>")
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>")
+
+vim.keymap.set("n", "<M-l>", "<C-w>5<")
+vim.keymap.set("n", "<M-h>", "<C-w>5>")
+vim.keymap.set("n", "<M-k>", "<C-w>+")
+vim.keymap.set("n", "<M-j>", "<C-w>-")
 
 local toggle_word_wrap = function()
   if vim.wo.wrap then
@@ -37,7 +42,7 @@ vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run curr
 vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run lua code line under cursor" })
 vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute lua selection" })
 
-vim.cmd('language en_US')
+vim.cmd("language en_US")
 
 vim.g.root_spec = { "cwd" }
 vim.g.netrw_banner = 0
@@ -51,17 +56,17 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.ignorecase = true
--- vim.opt.clipboard:append('unnamedplus')
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
-vim.api.nvim_set_hl(0, 'HighlightYank', { bg = '#6366f1', bold = true })
+vim.api.nvim_set_hl(0, "HighlightYank", { fg = "white", bg = "#6366f1", bold = true })
 
-vim.api.nvim_create_autocmd('TextYankPost', {
+vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    vim.highlight.on_yank { higroup = 'HighlightYank', timeout = 450 }
+    vim.highlight.on_yank { higroup = "HighlightYank", timeout = 450 }
   end,
 })

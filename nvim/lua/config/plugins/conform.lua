@@ -1,7 +1,5 @@
 return {
-  'stevearc/conform.nvim',
-
-  opts = {},
+  "stevearc/conform.nvim",
 
   config = function()
     require("conform").setup({
@@ -17,10 +15,10 @@ return {
       }
     })
 
-    vim.keymap.set('n', '<leader>kd', function()
+    vim.keymap.set("n", "<leader>kd", function()
       require("conform").format({
         async = false
       })
-    end)
+    end, { desc = "Run formatter (conform)" })
   end
 }
