@@ -2,6 +2,6 @@
 	name = Viktar Zhdanovich
 	email = viktorzhdanovich@gmail.com
 [core]
-	editor = code --wait
+	editor = nvim 
 [branch]
 	sort = -committerdate
