@@ -74,19 +74,22 @@ return {
       vim.keymap.set("n", "<leader>pb", require("telescope.builtin").buffers)
 
       local _titles = "#141415"
-      local _files = "#141415"
+      local _results = "#0F0F0F"
 
       local _preview = "#1C1C24"
+      local _preview_fg = "#6E94B2"
       local _prompt = "#252530"
 
       vim.api.nvim_create_autocmd('VimEnter', {
         callback = function()
           -- vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#141415", bg = "#141415" })
 
-          vim.api.nvim_set_hl(0, "TelescopeNormal", { fg = _files, bg = _files })
-          vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = _files, bg = _files })
+          -- vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "green", bg = "red" })
 
-          vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { fg = _preview, bg = _preview })
+          vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = _results })
+          vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = _results, bg = _results })
+
+          vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { fg = _preview_fg, bg = _preview })
           vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = _preview, bg = _preview })
 
           vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = _titles, bg = "#C48282" })
