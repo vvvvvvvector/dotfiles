@@ -14,11 +14,11 @@ vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "No highlight" })
 
-vim.keymap.set("n", "<C-p>", "<cmd>cprev<cr>")
-vim.keymap.set("n", "<C-n>", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<cr>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<cr>zz")
 
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>zz")
 
 vim.keymap.set("n", "<M-l>", "<C-w>5<")
 vim.keymap.set("n", "<M-h>", "<C-w>5>")
