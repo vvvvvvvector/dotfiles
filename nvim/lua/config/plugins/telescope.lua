@@ -51,6 +51,7 @@ return {
 
       vim.keymap.set("n", "<leader>pf", function()
         require("telescope.builtin").find_files({
+          path_display = { "smart" },
           find_command = { "fd", "-H", "-E", ".git", "--type", "f" }
         })
       end, { desc = "Open Telescope" })
@@ -69,9 +70,10 @@ return {
 
       vim.keymap.set("n", "<leader>pm", require("telescope.builtin").marks, { desc = "Marks" })
 
-      vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols)
+      vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols,
+        { desc = "LSP document symbols" })
 
-      vim.keymap.set("n", "<leader>pb", require("telescope.builtin").buffers)
+      vim.keymap.set("n", "<leader>pb", require("telescope.builtin").buffers, { desc = "Buffers" })
 
       local _titles = "#141415"
       local _results = "#0F0F0F"
