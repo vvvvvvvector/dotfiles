@@ -49,10 +49,18 @@ return {
 
       vim.keymap.set("n", "<leader>oh", require("telescope.builtin").help_tags, { desc = "Open help" })
 
+      local _find_files_find_command = { "fd", "-H", "-E", ".git", "--type", "f" };
+
       vim.keymap.set("n", "<leader>pf", function()
         require("telescope.builtin").find_files({
-          path_display = { "smart" },
-          find_command = { "fd", "-H", "-E", ".git", "--type", "f" }
+          find_command = _find_files_find_command
+        })
+      end, { desc = "Open Telescope (with preview)" })
+
+      vim.keymap.set("n", "<leader>pF", function()
+        require("telescope.builtin").find_files({
+          previewer = false,
+          find_command = _find_files_find_command
         })
       end, { desc = "Open Telescope" })
 
