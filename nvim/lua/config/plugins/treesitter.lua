@@ -10,8 +10,12 @@ return {
           "c", "lua", "vim", "vimdoc", "query",
           "typescript", "javascript", "tsx",
           "sql", "prisma", "json", "jsonc",
-          "markdown", "markdown_inline"
+          "markdown", "markdown_inline", "html"
         },
+
+        ignore_install = {},
+
+        sync_install = false,
 
         auto_install = false,
 
