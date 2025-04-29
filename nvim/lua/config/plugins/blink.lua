@@ -23,18 +23,29 @@ return {
       },
 
       appearance = {
-        nerd_font_variant = "mono"
+        nerd_font_variant = "mono",
       },
 
       completion = {
-        documentation = { auto_show = false },
+        documentation = {
+          treesitter_highlighting = true,
+          auto_show = true,
+          window = {
+            scrollbar = false
+          },
+        },
         ghost_text = { enabled = false },
         menu = {
           min_width = 20,
           max_height = 12,
           border = "rounded",
-          scrollbar = false -- Note that the gutter will be disabled when border ~= "none"
-        }
+          scrollbar = false, -- Note that the gutter will be disabled when border ~= "none"
+          draw = {
+            columns = {
+              { "kind_icon" }, { "label", "label_description" }, { "kind" }
+            },
+          }
+        },
       },
 
       sources = {
