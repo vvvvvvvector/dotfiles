@@ -27,6 +27,11 @@ return {
       },
 
       completion = {
+        accept = {
+          auto_brackets = {
+            enabled = true
+          }
+        },
         documentation = {
           treesitter_highlighting = true,
           auto_show = true,
