@@ -83,32 +83,29 @@ return {
 
       vim.keymap.set("n", "<leader>pb", require("telescope.builtin").buffers, { desc = "Buffers" })
 
-      local _titles = "#141415"
-      local _results = "#0F0F0F"
+      -- local colors = require('vague.config.internal')._DEFAULT_SETTINGS.colors;
 
-      local _preview = "#1C1C24"
-      local _preview_fg = "#6E94B2"
-      local _prompt = "#252530"
+      local _telescope = require('config.colors')._telescope
 
       vim.api.nvim_create_autocmd('VimEnter', {
         callback = function()
+          vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = _telescope.results.bg })
+          vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = _telescope.results.bg, bg = _telescope.results.bg })
+
+          vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { fg = _telescope.preview.fg, bg = _telescope.preview.bg })
+          vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = _telescope.preview.bg, bg = _telescope.preview.bg })
+          vim.api.nvim_set_hl(0, "TelescopePreviewTitle",
+            { fg = _telescope.preview.title.fg, bg = _telescope.preview.title.bg })
+
+          vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = _telescope.prompt.fg, bg = _telescope.prompt.bg })
+          vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = _telescope.prompt.bg, bg = _telescope.prompt.bg })
+          vim.api.nvim_set_hl(0, "TelescopePromptTitle",
+            { fg = _telescope.prompt.title.fg, bg = _telescope.prompt.title.bg })
+          vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = _telescope.prompt.prefix })
+
           -- vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#141415", bg = "#141415" })
 
           -- vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "green", bg = "red" })
-
-          vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = _results })
-          vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = _results, bg = _results })
-
-          vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { fg = _preview_fg, bg = _preview })
-          vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = _preview, bg = _preview })
-
-          vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = _titles, bg = "#C48282" })
-
-          vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = "#CDCDCD", bg = _prompt })
-          vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = _prompt, bg = _prompt })
-
-          vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = _titles, bg = "#E8B588" })
-          vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = "#E8B588", bg = _prompt })
         end
       })
     end,

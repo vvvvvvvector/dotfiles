@@ -56,7 +56,9 @@ return {
           harpoon.ui:select_menu_item({ tabedit = true })
         end, { buffer = cx.bufnr })
 
-        vim.api.nvim_set_hl(0, "HarpoonLine", { fg = "#C48282", bg = "#141415", bold = true })
+        local _harpoon = require('config.colors')._harpoon.current_file
+
+        vim.api.nvim_set_hl(0, "HarpoonLine", { fg = _harpoon.fg, bg = _harpoon.bg, bold = true })
 
         for line_number, file in pairs(cx.contents) do
           if string.find(cx.current_file, file, 1, true) then
