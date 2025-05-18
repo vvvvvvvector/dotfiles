@@ -21,3 +21,5 @@ vim.opt.clipboard = "unnamedplus" -- vim.opt.clipboard:append("unnamedplus")
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
+
+vim.opt.termguicolors = true
