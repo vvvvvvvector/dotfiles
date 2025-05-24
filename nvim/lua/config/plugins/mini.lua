@@ -1,31 +1,31 @@
 return {
-  {
-    'echasnovski/mini.cursorword',
+	{
+		"echasnovski/mini.cursorword",
 
-    version = false,
+		version = false,
 
-    config = function()
-      require("mini.cursorword").setup()
-    end
-  },
+		config = function()
+			require("mini.cursorword").setup()
+		end,
+	},
 
-  {
-    'echasnovski/mini.ai',
+	{
+		"echasnovski/mini.ai",
 
-    version = false,
+		version = false,
 
-    config = function()
-      require("mini.ai").setup()
-    end
-  },
+		config = function()
+			require("mini.ai").setup()
+		end,
+	},
 
-  {
-    'echasnovski/mini.diff',
+	{
+		"echasnovski/mini.diff",
 
-    version = false,
+		version = false,
 
-    config = function()
-      require("mini.diff").setup()
-    end
-  },
+		config = function()
+			require("mini.diff").setup()
+		end,
+	},
 }

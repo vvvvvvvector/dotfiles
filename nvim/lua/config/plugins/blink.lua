@@ -1,69 +1,83 @@
 return {
-  {
-    "saghen/blink.cmp",
+	{
+		"saghen/blink.cmp",
 
-    dependencies = { "rafamadriz/friendly-snippets" },
+		dependencies = { "rafamadriz/friendly-snippets" },
 
-    version = "1.*",
+		version = "1.*",
 
-    ---@module "blink.cmp"
-    ---@type blink.cmp.Config
-    opts = {
-      signature = { enabled = true },
+		---@module "blink.cmp"
+		---@type blink.cmp.Config
+		opts = {
+			signature = { enabled = true },
 
-      keymap = {
-        preset = "default",
+			keymap = {
+				preset = "default",
 
-        ["<C-space>"] = {},
+				["<C-space>"] = {},
 
-        ["<C-i>"] = { function(cmp) cmp.show({ providers = { "lsp" } }) end },
+				["<C-i>"] = {
+					function(cmp)
+						cmp.show({ providers = { "lsp" } })
+					end,
+				},
 
-        ["<S-k>"] = { function(cmp) cmp.scroll_documentation_up(4) end },
-        ["<S-j>"] = {  function(cmp) cmp.scroll_documentation_down(4) end },
+				["<S-k>"] = {
+					function(cmp)
+						cmp.scroll_documentation_up(4)
+					end,
+				},
+				["<S-j>"] = {
+					function(cmp)
+						cmp.scroll_documentation_down(4)
+					end,
+				},
 
-        ["<C-k>"] = { "select_prev", "fallback" },
-        ["<C-j>"] = { "select_next", "fallback" },
-      },
+				["<C-k>"] = { "select_prev", "fallback" },
+				["<C-j>"] = { "select_next", "fallback" },
+			},
 
-      appearance = {
-        nerd_font_variant = "mono",
-      },
+			appearance = {
+				nerd_font_variant = "mono",
+			},
 
-      completion = {
-        accept = {
-          auto_brackets = {
-            enabled = true
-          }
-        },
-        documentation = {
-          auto_show_delay_ms = 200,
-          treesitter_highlighting = true,
-          auto_show = true,
-          window = {
-            border = 'rounded',
-            scrollbar = false
-          },
-        },
-        ghost_text = { enabled = false },
-        menu = {
-          min_width = 20,
-          max_height = 12,
-          border = "rounded",
-          scrollbar = false, -- Note that the gutter will be disabled when border ~= "none"
-          draw = {
-            columns = {
-              { "kind_icon" }, { "label", "label_description" }, { "kind" }
-            },
-          }
-        },
-      },
+			completion = {
+				accept = {
+					auto_brackets = {
+						enabled = true,
+					},
+				},
+				documentation = {
+					auto_show_delay_ms = 200,
+					treesitter_highlighting = true,
+					auto_show = true,
+					window = {
+						border = "rounded",
+						scrollbar = false,
+					},
+				},
+				ghost_text = { enabled = false },
+				menu = {
+					min_width = 20,
+					max_height = 12,
+					border = "rounded",
+					scrollbar = false, -- Note that the gutter will be disabled when border ~= "none"
+					draw = {
+						columns = {
+							{ "kind_icon" },
+							{ "label", "label_description" },
+							{ "kind" },
+						},
+					},
+				},
+			},
 
-      sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-      },
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
 
-      fuzzy = { implementation = "prefer_rust_with_warning" },
-    },
-    opts_extend = { "sources.default" }
-  }
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+		opts_extend = { "sources.default" },
+	},
 }
