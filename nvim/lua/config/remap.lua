@@ -1,9 +1,9 @@
 local toggle_word_wrap = function()
-	if vim.wo.wrap then
-		vim.cmd("set nowrap")
-	else
-		vim.cmd("set wrap")
-	end
+  if vim.wo.wrap then
+    vim.cmd("set nowrap")
+  else
+    vim.cmd("set wrap")
+  end
 end
 
 -- print(vim.inspect(vim.wo.wrap))
