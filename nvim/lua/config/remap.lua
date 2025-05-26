@@ -11,7 +11,8 @@ end
 vim.keymap.set("n", "<leader>rw", toggle_word_wrap, { desc = "Toggle word wrap" })
 vim.api.nvim_create_user_command("ToggleWordWrap", toggle_word_wrap, {})
 
-vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open oil" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>E", "<cmd>Oil --float<cr>", { desc = "Open Oil --float" })
 vim.keymap.set("n", "<leader>,", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open diagnostic float" })
 
 -- vim.keymap.set("n", "<leader>zm", "<cmd>ZenMode<cr>", { silent = true })
