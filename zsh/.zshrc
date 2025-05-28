@@ -109,6 +109,7 @@ alias tc=clear
 alias pn=pnpm
 alias px=pnpm dlx
 alias lg=lazygit
+alias vim=nvim
 
 # -----------------aliases-----------------
 
@@ -143,7 +144,7 @@ export FZF_DEFAULT_OPTS='--height 100% --preview-window=down,70%'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:-1,fg+:#ffffff,bg:-1,bg+:#262626
   --color=hl:#3b82f6,hl+:#60a5fa,info:#71717a,marker:#10b981
-  --color=prompt:#c084fc,spinner:#c084fc,pointer:#c084fc,header:#10b981
+  --color=prompt:magenta,spinner:magenta,pointer:magenta,header:#10b981
   --color=border:#71717a,label:#aeaeae,query:#d9d9d9
   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧: "
   --marker="$" --pointer="|" --separator="~" --scrollbar="|"'
@@ -279,3 +280,5 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 export PATH=$PATH:~/Github/dotfiles/tmux
 
 # -----------------tmux-----------------
+
+export MANPAGER='nvim +Man!'
