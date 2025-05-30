@@ -22,6 +22,8 @@ return {
           dynamic_preview_title = true,
           mappings = {
             i = {
+              ["<C-X>"] = false,
+
               ["<C-k>"] = "move_selection_previous",
               ["<C-j>"] = "move_selection_next",
 
@@ -29,8 +31,6 @@ return {
               ["K"] = "preview_scrolling_up",
 
               ["<C-h>"] = "select_horizontal",
-
-              ["<C-X>"] = false,
             },
           },
           extensions = {
@@ -47,7 +47,15 @@ return {
         })
       end, { desc = "Open config" })
 
-      vim.keymap.set("n", "<leader>oh", require("telescope.builtin").help_tags, { desc = "Open help" })
+      vim.keymap.set("n", "<leader>oh", function()
+        require("telescope.builtin").help_tags(require("telescope.themes").get_dropdown({
+          previewer = false,
+          layout_config = {
+            width = 0.55,
+            height = 0.55,
+          },
+        }))
+      end, { desc = "Open help" })
 
       local _find_files_find_command = { "fd", "-H", "-E", ".git", "--type", "f" }
 
@@ -58,10 +66,14 @@ return {
       end, { desc = "Open Telescope (with preview)" })
 
       vim.keymap.set("n", "<leader>pF", function()
-        require("telescope.builtin").find_files({
+        require("telescope.builtin").find_files(require("telescope.themes").get_dropdown({
           previewer = false,
           find_command = _find_files_find_command,
-        })
+          layout_config = {
+            width = 0.55,
+            height = 0.55,
+          },
+        }))
       end, { desc = "Open Telescope" })
 
       vim.keymap.set("n", "<leader>pq", require("telescope.builtin").live_grep, { desc = "Quick search" })
