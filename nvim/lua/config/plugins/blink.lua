@@ -22,17 +22,6 @@ return {
           end,
         },
 
-        ["<S-k>"] = {
-          function(cmp)
-            cmp.scroll_documentation_up(4)
-          end,
-        },
-        ["<S-j>"] = {
-          function(cmp)
-            cmp.scroll_documentation_down(4)
-          end,
-        },
-
         ["<C-k>"] = { "select_prev", "fallback" },
         ["<C-j>"] = { "select_next", "fallback" },
       },
@@ -49,7 +38,7 @@ return {
         },
         documentation = {
           auto_show_delay_ms = 200,
-          treesitter_highlighting = true,
+          treesitter_highlighting = false,
           auto_show = true,
           window = {
             border = "rounded",
