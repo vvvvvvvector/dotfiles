@@ -33,7 +33,9 @@ return {
     -- REQUIRED
 
     vim.keymap.set("n", "<leader>hf", function()
-      harpoon.ui:toggle_quick_menu(harpoon:list())
+      harpoon.ui:toggle_quick_menu(harpoon:list(), {
+        border = 'rounded'
+      })
     end, { desc = "Harpoon menu toggle" })
 
     vim.keymap.set("n", "<leader>ha", function()
