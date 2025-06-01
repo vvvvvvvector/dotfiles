@@ -46,3 +46,13 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current lua file" })
 vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run lua code line under cursor" })
 vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute lua selection" })
+
+local copy_relative_path = function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end
+
+vim.keymap.set("n", "<leader>crp", copy_relative_path, { desc = "Copy relative path to the clipboard" })
+
+vim.api.nvim_create_user_command("CopyRelativePath", copy_relative_path, {})
