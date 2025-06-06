@@ -15,6 +15,7 @@ return {
         preset = "default",
 
         ["<C-space>"] = {},
+        ['<C-d>'] = { 'show_documentation', 'hide_documentation' },
 
         ["<C-i>"] = {
           function(cmp)
@@ -37,9 +38,9 @@ return {
           },
         },
         documentation = {
-          auto_show_delay_ms = 200,
-          treesitter_highlighting = false,
-          auto_show = true,
+          auto_show_delay_ms = 300,
+          treesitter_highlighting = true,
+          auto_show = false,
           window = {
             border = "rounded",
             scrollbar = false,
@@ -54,7 +55,7 @@ return {
           draw = {
             columns = {
               { "kind_icon" },
-              { "label", "label_description" },
+              { "label",    "label_description" },
               { "kind" },
             },
           },
