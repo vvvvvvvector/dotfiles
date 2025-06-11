@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>,", "<cmd>lua vim.diagnostic.open_float()<cr>", { d
 
 -- vim.keymap.set("n", "<leader>zm", "<cmd>ZenMode<cr>", { silent = true })
 
-vim.keymap.set("n", "<tab>", "<c-w><c-w>")
+vim.keymap.set("n", "§", "<c-w><c-w>")
 
 vim.keymap.set("n", "]<tab>", "<cmd>tabn<cr>", { desc = "Next tab" })
 vim.keymap.set("n", "[<tab>", "<cmd>tabp<cr>", { desc = "Prev tab" })
