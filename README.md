@@ -1,8 +1,7 @@
-## Steps to bootstrap a new Mac
-
 Install Apple's CLI tools, which are prerequesties for Git and Homebrew
 
 ```sh
+sudo rm -rf /Library/Developer/CommandLineTools
 xcode-select --install
 ```
 
