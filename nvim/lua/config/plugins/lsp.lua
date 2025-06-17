@@ -21,7 +21,7 @@ return {
         float = { border = _border },
       })
 
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = _border })
+      -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = _border })
 
       local capabilities = require("blink.cmp").get_lsp_capabilities()
       require("lspconfig").lua_ls.setup({ capabilites = capabilities })
@@ -30,7 +30,9 @@ return {
         callback = function(event)
           local opts = { buffer = event.buf }
 
-          vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+          vim.keymap.set("n", "gh", function()
+            vim.lsp.buf.hover { border = _border }
+          end, opts)
           vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
           vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
           vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
