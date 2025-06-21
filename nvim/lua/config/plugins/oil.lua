@@ -11,7 +11,7 @@ return {
       preview_split = "right",
       padding = 0,
       -- max_width and max_height can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-      max_width = 0.5,
+      max_width = 0.65,
       max_height = 0.9,
     },
     view_options = {
