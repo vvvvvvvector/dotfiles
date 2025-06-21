@@ -12,6 +12,7 @@ return {
         css = { "prettierd" },
         scss = { "prettierd" },
         json = { "prettierd" },
+        sh = { "shellharden" }
       },
     })
 
