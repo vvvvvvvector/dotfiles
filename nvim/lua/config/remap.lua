@@ -15,6 +15,8 @@ vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil" })
 vim.keymap.set("n", "<leader>E", "<cmd>Oil --float<cr>", { desc = "Open Oil --float" })
 vim.keymap.set("n", "<leader>,", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Open diagnostic float" })
 
+vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewFileHistory %<cr>", { desc = "File history for current file" })
+
 -- vim.keymap.set("n", "<leader>zm", "<cmd>ZenMode<cr>", { silent = true })
 
 vim.keymap.set("n", "§", "<c-w><c-w>")
