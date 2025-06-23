@@ -277,8 +277,10 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # -----------------tmux-----------------
 
-export PATH=$PATH:~/Github/dotfiles/tmux
+export PATH=$PATH:~/Github/dotfiles/scripts
 
 # -----------------tmux-----------------
 
 export MANPAGER='nvim +Man!'
+
+. "/Users/vvvvvec1or/.deno/env" # it appeared when I installed deno; idk why deno does it atm
