@@ -12,7 +12,7 @@ vim.api.nvim_set_hl(0, "HighlightYank", { fg = "white", bg = "#6366f1", bold = t
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    vim.highlight.on_yank({ higroup = "HighlightYank", timeout = 450 })
+    vim.hl.on_yank({ higroup = "HighlightYank", timeout = 450 })
   end,
 })
 
