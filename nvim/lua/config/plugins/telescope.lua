@@ -81,11 +81,9 @@ return {
       vim.keymap.set("n", "<leader>pq", require("telescope.builtin").live_grep, { desc = "Quick search" })
 
       vim.keymap.set("n", "<leader>pr", function()
-        local opts = require("telescope.themes").get_ivy({
+        require("telescope.builtin").lsp_references(require("telescope.themes").get_ivy({
           cwd = vim.fn.stdpath("config"),
-        })
-
-        require("telescope.builtin").lsp_references(opts)
+        }))
       end, { desc = "Peek References" })
 
       vim.keymap.set("n", "<leader>pd", require("telescope.builtin").diagnostics, { desc = "Open diagnostics" })
