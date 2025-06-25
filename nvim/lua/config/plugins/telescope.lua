@@ -61,7 +61,7 @@ return {
 
       vim.keymap.set("n", "<leader>pf", function()
         require("telescope.builtin").find_files({
-          find_command = _find_files_find_command,
+          find_command = _find_files_find_command
         })
       end, { desc = "Open Telescope (with preview)" })
 
@@ -98,6 +98,18 @@ return {
       )
 
       vim.keymap.set("n", "<leader>pb", require("telescope.builtin").buffers, { desc = "Buffers" })
+
+      vim.keymap.set("n", "<leader>:", function()
+        require("telescope.builtin").command_history(require("telescope.themes").get_dropdown({
+          previewer = false,
+          layout_config = {
+            width = 0.55,
+            height = 0.55,
+          },
+        }))
+      end, { desc = "Open command history" })
+
+      vim.keymap.set("n", "<leader>r", require("telescope.builtin").resume, { desc = "Resume" })
 
       -- local colors = require('vague.config.internal')._DEFAULT_SETTINGS.colors;
 
