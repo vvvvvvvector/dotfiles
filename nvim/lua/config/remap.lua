@@ -8,7 +8,7 @@ end
 
 -- print(vim.inspect(vim.wo.wrap))
 
-vim.keymap.set("n", "<leader>rw", toggle_word_wrap, { desc = "Toggle word wrap" })
+vim.keymap.set("n", "<leader>ww", toggle_word_wrap, { desc = "Toggle word wrap" })
 vim.api.nvim_create_user_command("ToggleWordWrap", toggle_word_wrap, {})
 
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil" })
