@@ -95,8 +95,14 @@ return {
 
       vim.keymap.set(
         "n",
-        "<leader>ds",
-        require("telescope.builtin").lsp_document_symbols,
+        "<leader>ds", function()
+          require("telescope.builtin").lsp_document_symbols(require("telescope.themes").get_dropdown({
+            layout_config = {
+              width = 0.60,
+              height = 0.30,
+            },
+          }))
+        end,
         { desc = "LSP document symbols" }
       )
 
