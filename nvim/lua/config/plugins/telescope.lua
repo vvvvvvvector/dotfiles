@@ -103,8 +103,8 @@ return {
         require("telescope.builtin").command_history(require("telescope.themes").get_dropdown({
           previewer = false,
           layout_config = {
-            width = 0.55,
-            height = 0.55,
+            width = 0.50,
+            height = 0.80,
           },
         }))
       end, { desc = "Open command history" })
