@@ -2,10 +2,6 @@ return {
   {
     "williamboman/mason.nvim",
 
-    branch = "main",
-
-    commit = "fc98833b6da5de5a9c5b1446ac541577059555be",
-
     config = function()
       require("mason").setup()
     end,
