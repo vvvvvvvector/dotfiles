@@ -90,6 +90,9 @@ return {
 
       vim.keymap.set("n", "<leader>pm", require("telescope.builtin").marks, { desc = "Marks" })
 
+      vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols,
+        { desc = "LSP workspace symbols" })
+
       vim.keymap.set(
         "n",
         "<leader>ds",
