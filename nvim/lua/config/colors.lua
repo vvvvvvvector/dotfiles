@@ -24,7 +24,7 @@ local _telescope = {
       bg = _telescope_reusable._prompt_title_bg,
       fg = _telescope_reusable._title_fg,
     },
-    prefix = _telescope_reusable._prompt_title_bg,
+    prefix = "#818cf8",
   },
 }
 

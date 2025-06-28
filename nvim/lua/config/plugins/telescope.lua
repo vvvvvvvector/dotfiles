@@ -16,6 +16,7 @@ return {
       require("telescope").setup({
         defaults = {
           border = true,
+          prompt_prefix = "✦ ",
           layout_strategy = "horizontal",
           layout_config = {
             width = 0.90,
