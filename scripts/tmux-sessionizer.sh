@@ -26,9 +26,15 @@ fi
 selected_name=$(basename "$selected" | tr . _) # a name for tmux session; extracts file or directory name and replace . with _
 tmux_running=$(pgrep tmux) # store tmux proccess id
 
-# if not inside tmux session and tmux process is running
+# if not inside tmux session and tmux process is not running
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s "$selected_name" -c "$selected"
+    exit 0
+fi
+
+# if not inside tmux session and tmux process is running
+if [[ -z $TMUX ]] && [[ -n $tmux_running ]]; then
+    tmux attach-session -t "$selected_name"
     exit 0
 fi
 
