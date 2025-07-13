@@ -14,6 +14,12 @@ return {
           icon = "",
           color = "#58C4DC",
           name = "tsx"
+        },
+
+        ["ts"] = {
+          icon = "",
+          color = "#3178C6",
+          name = "ts"
         }
       },
     })
