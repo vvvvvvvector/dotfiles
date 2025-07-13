@@ -7,7 +7,13 @@ return {
         ["css"] = {
           icon = "",
           color = "#3b82f6",
-          name = "CSS"
+          name = "css"
+        },
+
+        ["tsx"] = {
+          icon = "",
+          color = "#58C4DC",
+          name = "tsx"
         }
       },
     })
