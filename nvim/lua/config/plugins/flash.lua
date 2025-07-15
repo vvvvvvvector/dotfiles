@@ -10,13 +10,13 @@ return {
         enabled = true,
       },
       char = {
-        jump_labels = false,
+        jump_labels = true,
       },
     },
   },
   -- n - normal mode
   -- o - operator pending mode
-  -- v - visual mode
+  -- x - visual mode
   -- c - command line mode
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
