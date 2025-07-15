@@ -6,6 +6,14 @@ local toggle_word_wrap = function()
   end
 end
 
+local close_floats = function()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.api.nvim_win_get_config(win).relative == "win" then
+      vim.api.nvim_win_close(win, false)
+    end
+  end
+end
+
 -- print(vim.inspect(vim.wo.wrap))
 
 vim.keymap.set("n", "<leader>ww", toggle_word_wrap, { desc = "Toggle word wrap" })
@@ -19,7 +27,6 @@ vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewFileHistory %<cr>", { desc = "Fi
 
 -- vim.keymap.set("n", "<leader>zm", "<cmd>ZenMode<cr>", { silent = true })
 
-vim.keymap.set("n", "§", "<c-w><c-w>")
 
 vim.keymap.set("n", "]<tab>", "<cmd>tabn<cr>", { desc = "Next tab" })
 vim.keymap.set("n", "[<tab>", "<cmd>tabp<cr>", { desc = "Prev tab" })
@@ -58,3 +65,6 @@ end
 vim.keymap.set("n", "<leader>crp", copy_relative_path, { desc = "Copy relative path to the clipboard" })
 
 vim.api.nvim_create_user_command("CopyRelativePath", copy_relative_path, {})
+vim.api.nvim_create_user_command("CloseFloats", close_floats, {})
+
+vim.keymap.set("n", "§", "<cmd>CloseFloats<cr><c-w><c-w>")
