@@ -6,7 +6,7 @@ return {
       override_by_extension = {
         ["css"] = {
           icon = "",
-          color = "#3b82f6",
+          color = "#1572B6",
           name = "css"
         },
 
