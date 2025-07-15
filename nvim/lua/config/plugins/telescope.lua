@@ -33,7 +33,8 @@ return {
               ["J"] = "preview_scrolling_down",
               ["K"] = "preview_scrolling_up",
 
-              ["<C-h>"] = "select_horizontal",
+              ["<C-s>"] = "select_horizontal",
+
 
               ['<C-p>'] = require('telescope.actions.layout').toggle_preview
             },

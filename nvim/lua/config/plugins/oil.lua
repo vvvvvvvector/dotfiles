@@ -20,6 +20,10 @@ return {
     keymaps = {
       ["<C-v>"] = { "actions.select", opts = { vertical = true } },
 
+      ["<C-h>"] = false,
+
+      ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
+
       ["gd"] = {
         desc = "Toggle file detail view",
         callback = function()
