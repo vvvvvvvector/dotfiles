@@ -13,6 +13,8 @@ return {
     },
 
     config = function()
+      local actions = require('telescope.actions')
+
       require("telescope").setup({
         defaults = {
           border = true,
@@ -35,6 +37,7 @@ return {
 
               ["<C-s>"] = "select_horizontal",
 
+              ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 
               ['<C-p>'] = require('telescope.actions.layout').toggle_preview
             },
