@@ -5,6 +5,7 @@ return {
     require("autoclose").setup({
       options = {
         disabled_filetypes = {},
+        pair_spaces = true,
       },
     })
   end,
