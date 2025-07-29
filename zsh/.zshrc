@@ -217,13 +217,6 @@ export BAT_THEME="Visual Studio Dark+"
 
 # -----------------bat-----------------
 
-# -----------------thefuck-----------------
-
-# eval $(thefuck --alias)
-
-# -----------------thefuck-----------------
-
-
 # -----------------zoxide-----------------
 
 eval "$(zoxide init zsh)"
@@ -284,3 +277,10 @@ export PATH=$PATH:~/Github/dotfiles/scripts
 export MANPAGER='nvim +Man!'
 
 . "/Users/vvvvvec1or/.deno/env" # it appeared when I installed deno; idk why deno does it atm
+
+# bun completions
+[ -s "/Users/vvvvvec1or/.bun/_bun" ] && source "/Users/vvvvvec1or/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
