@@ -27,7 +27,6 @@ vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewFileHistory %<cr>", { desc = "Fi
 
 -- vim.keymap.set("n", "<leader>zm", "<cmd>ZenMode<cr>", { silent = true })
 
-
 vim.keymap.set("n", "]<tab>", "<cmd>tabn<cr>", { desc = "Next tab" })
 vim.keymap.set("n", "[<tab>", "<cmd>tabp<cr>", { desc = "Prev tab" })
 
