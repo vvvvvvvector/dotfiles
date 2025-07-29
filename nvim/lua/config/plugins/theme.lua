@@ -8,6 +8,8 @@ return {
           strings = "italic",
         },
       })
+
+      vim.cmd("colorscheme vague")
     end,
   },
 }

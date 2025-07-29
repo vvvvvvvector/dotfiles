@@ -1,8 +1,8 @@
 require("config")
 
-vim.cmd("colorscheme vague")
-
 vim.cmd("language en_US")
+
+vim.g.netrw_banner = 0
 
 vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#AEADD1", bg = "#252530", bold = true })
 -- vim.api.nvim_set_hl(0, "TabLine", { fg = "white", bg = "#6366f1", })
