@@ -66,4 +66,4 @@ vim.keymap.set("n", "<leader>crp", copy_relative_path, { desc = "Copy relative p
 vim.api.nvim_create_user_command("CopyRelativePath", copy_relative_path, {})
 vim.api.nvim_create_user_command("CloseFloats", close_floats, {})
 
-vim.keymap.set("n", "§", "<cmd>CloseFloats<cr><c-w><c-w>")
+vim.keymap.set("n", "§", "<c-w><c-w>")
