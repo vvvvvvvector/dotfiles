@@ -57,6 +57,12 @@ vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute lua selection" })
 
 local copy_relative_path = function()
   local path = vim.fn.expand("%:p")
+  local home = os.getenv("HOME")
+
+  if home then
+    path = string.gsub(path, "^" .. home, "~")
+  end
+
   vim.fn.setreg("+", path)
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end
