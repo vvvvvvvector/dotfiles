@@ -55,7 +55,7 @@ vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run curr
 vim.keymap.set("n", "<leader>x", ":.lua<cr>", { desc = "Run lua code line under cursor" })
 vim.keymap.set("v", "<leader>x", ":lua<cr>", { desc = "Execute lua selection" })
 
-local copy_relative_path = function()
+local copy_file_path = function()
   local path = vim.fn.expand("%:p")
   local home = os.getenv("HOME")
 
@@ -67,9 +67,9 @@ local copy_relative_path = function()
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end
 
-vim.keymap.set("n", "<leader>crp", copy_relative_path, { desc = "Copy relative path to the clipboard" })
+vim.keymap.set("n", "<leader>cfp", copy_file_path, { desc = "Copy file path to the clipboard" })
 
-vim.api.nvim_create_user_command("CopyRelativePath", copy_relative_path, {})
+vim.api.nvim_create_user_command("CopyFilePath", copy_file_path, {})
 vim.api.nvim_create_user_command("CloseFloats", close_floats, {})
 
 vim.keymap.set("n", "§", "<c-w><c-w>")
