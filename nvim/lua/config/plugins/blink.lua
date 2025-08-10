@@ -9,7 +9,7 @@ return {
     ---@module "blink.cmp"
     ---@type blink.cmp.Config
     opts = {
-      signature = { enabled = true },
+      signature = { enabled = true, window = { border = 'rounded' } },
 
       keymap = {
         preset = "default",
