@@ -2,8 +2,6 @@ return {
   "dmmulroy/tsc.nvim",
 
   config = function()
-    require('tsc').setup({
-
-    })
+    require('tsc').setup()
   end,
 }
