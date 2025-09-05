@@ -4,8 +4,8 @@ vim.cmd("language en_US")
 
 vim.g.netrw_banner = 0
 
-vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#AEADD1", bg = "#252530", bold = true })
--- vim.api.nvim_set_hl(0, "TabLine", { fg = "white", bg = "#6366f1", })
+vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#AEADD1", bg = "#141415", bold = true })
+vim.api.nvim_set_hl(0, "TabLine", { fg = "#A1A1A1", bg = "#141415", })
 vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#141415" })
 
 vim.api.nvim_set_hl(0, "HighlightYank", { fg = "white", bg = "#6366f1", bold = true })
