@@ -10,10 +10,6 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
 
-    branch = "main",
-
-    commit = "1a31f824b9cd5bc6f342fc29e9a53b60d74af245",
-
     dependencies = { "williamboman/mason.nvim" },
 
     config = function()
@@ -24,7 +20,7 @@ return {
 
         handlers = {
           function(server_name)
-            require("lspconfig")[server_name].setup({})
+            vim.lsp.enable(server_name)
           end,
         },
       })

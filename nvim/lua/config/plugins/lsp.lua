@@ -23,8 +23,10 @@ return {
 
       -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = _border })
 
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
-      require("lspconfig").lua_ls.setup({ capabilites = capabilities })
+      -- local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+      -- vim.lsp.config('lua_ls').setup({ capabilites = capabilities })
+      -- vim.lsp.config('vtsls').setup({ capabilites = capabilities })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(event)
