@@ -42,4 +42,18 @@ return {
       vim.keymap.set("n", "]h", "<cmd>lua MiniDiff.goto_hunk('next')<cr>zz", { desc = "MiniDiff next hunk" })
     end,
   },
+
+  {
+    "echasnovski/mini.bufremove",
+
+    version = false,
+
+    config = function()
+      local bufremove = require("mini.bufremove")
+
+      bufremove.setup()
+
+      vim.keymap.set("n", "<leader>br", bufremove.delete, {desc = 'Mini: buf remove'})
+    end,
+  },
 }
