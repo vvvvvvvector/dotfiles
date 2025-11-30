@@ -68,13 +68,13 @@ return {
 
       local _find_files_find_command = { "fd", "-H", "-E", ".git", "--type", "f" }
 
-      vim.keymap.set("n", "<leader>pF", function()
+      vim.keymap.set("n", "<leader>pf", function()
         require("telescope.builtin").find_files({
           find_command = _find_files_find_command
         })
       end, { desc = "Open Telescope (with preview)" })
 
-      vim.keymap.set("n", "<leader>pf", function()
+      vim.keymap.set("n", "<leader>pF", function()
         require("telescope.builtin").find_files(require("telescope.themes").get_dropdown({
           previewer = false,
           find_command = _find_files_find_command,
