@@ -1,6 +1,6 @@
 return {
   {
-    "echasnovski/mini.cursorword",
+    "nvim-mini/mini.cursorword",
 
     version = false,
 
@@ -10,7 +10,7 @@ return {
   },
 
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
 
     version = false,
 
@@ -20,7 +20,7 @@ return {
   },
 
   {
-    "echasnovski/mini.diff",
+    "nvim-mini/mini.diff",
 
     version = false,
 
@@ -44,7 +44,7 @@ return {
   },
 
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
 
     version = false,
 
@@ -53,7 +53,31 @@ return {
 
       bufremove.setup()
 
-      vim.keymap.set("n", "<leader>br", bufremove.delete, {desc = 'Mini: buf remove'})
+      vim.keymap.set("n", "<leader>br", bufremove.delete, { desc = 'Mini: buf remove' })
     end,
   },
+
+  {
+    "nvim-mini/mini.move",
+
+    version = false,
+
+    config = function()
+      require("mini.move").setup({
+        mappings = {
+          -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+          left = '<C-M-h>',
+          right = '<C-M-l>',
+          down = '<C-M-j>',
+          up = '<C-M-k>',
+
+          -- Move current line in Normal mode
+          line_left = '<C-M-h>',
+          line_right = '<C-M-l>',
+          line_down = '<C-M-j>',
+          line_up = '<C-M-k>',
+        },
+      })
+    end,
+  }
 }
