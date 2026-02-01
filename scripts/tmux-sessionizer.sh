@@ -7,7 +7,13 @@ if [[ $# -eq 1 ]]; then
 else
     # store result of the selection in selected variable
     selected=$(
-        { find ~/Github ~/Work/ -mindepth 1 -maxdepth 1 -type d; echo /tmp; } | \
+        { 
+          find ~/Github ~/Work -mindepth 1 -maxdepth 1 -type d; 
+          echo /tmp;
+          echo ~/.config/ghostty;
+          echo ~/.config/nvim;
+          echo ~/.config/aerospace;
+        } | \
         sed "s|^$HOME/||" | \
         fzf
     )
