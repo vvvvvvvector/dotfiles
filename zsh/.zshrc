@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -156,61 +156,6 @@ export FZF_CTRL_T_OPTS="
 
 # -----------------fzf-----------------
 
-# -----------------fzf-git-----------------
-
-# [ -f ~/.fzf-git.sh ] && source ~/.fzf-git.sh
-#
-# _fzf_git_fzf() {
-#   fzf-tmux -- \
-#     --layout=reverse --multi --height=100% --border \
-#     --border-label-pos=2 \
-#     --color='header:italic:underline,label:blue' \
-#     --preview-window='bottom,70%,border-top' \
-#     --bind='ctrl-/:change-preview-window(right,65%,border-left|hidden|)' "$@"
-# }
-#
-# _fzf_git_remotes() {
-#   _fzf_git_check || return
-#   git remote -v | awk '{print $1 "\t" $2}' | uniq |
-#   _fzf_git_fzf --tac \
-#     --border-label 'Remotes' \
-#     --header $'CTRL-O (open in browser)\n\n' \
-#     --bind "ctrl-o:execute-silent:bash $__fzf_git remote {1}" \
-#     --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' '{1}/$(git rev-parse --abbrev-ref HEAD)' --" "$@" |
-#   cut -d$'\t' -f1
-# }
-#
-# _fzf_git_branches() {
-#   _fzf_git_check || return
-#   bash "$__fzf_git" branches |
-#   _fzf_git_fzf --ansi \
-#     --border-label 'Branches' \
-#     --header-lines 2 \
-#     --tiebreak begin \
-#     --color hl:underline,hl+:underline \
-#     --no-hscroll \
-#     --bind "ctrl-o:execute-silent:bash $__fzf_git branch {}" \
-#     --bind "alt-a:change-border-label(All branches)+reload:bash \"$__fzf_git\" all-branches" \
-#     --preview "git log --oneline --graph --date=short --color=$(__fzf_git_color .) --pretty='format:%C(auto)%cd %h%d %s' \$(sed s/^..// <<< {} | cut -d' ' -f1) --" "$@" |
-#   sed 's/^..//' | cut -d' ' -f1
-# }
-#
-# _fzf_git_hashes() {
-#   _fzf_git_check || return
-#   bash "$__fzf_git" hashes |
-#   _fzf_git_fzf --ansi --no-sort --bind 'ctrl-s:toggle-sort' \
-#     --border-label 'Hashes' \
-#     --header-lines 3 \
-#     --bind "ctrl-o:execute-silent:bash $__fzf_git commit {}" \
-#     --bind "ctrl-d:execute:grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git diff --color=$(__fzf_git_color) > /dev/tty" \
-#     --bind "alt-a:change-border-label(All hashes)+reload:bash \"$__fzf_git\" all-hashes" \
-#     --color hl:underline,hl+:underline \
-#     --preview "grep -o '[a-f0-9]\{7,\}' <<< {} | head -n 1 | xargs git show --color=$(__fzf_git_color .) | $(__fzf_git_pager)" "$@" |
-#   awk 'match($0, /[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]*/) { print substr($0, RSTART, RLENGTH) }'
-# }
-
-# -----------------fzf-git-----------------
-
 # -----------------bat-----------------
 
 export BAT_THEME="Visual Studio Dark+"
@@ -239,6 +184,12 @@ eval "$(zoxide init zsh)"
 
 # -----------------vi-mode-----------------
 
+my-open-vim() {
+  BUFFER="vim"
+  zle accept-line
+}
+zle -N my-open-vim
+
 # -----------------zsh-vi-mode-----------------
 
 ZVM_VI_EDITOR=nvim
@@ -251,6 +202,9 @@ ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
   zvm_bindkey viins "^I" fzf-completion
+
+  zvm_bindkey viins "\e[24~" my-open-vim
+  zvm_bindkey vicmd "\e[24~" my-open-vim
 }
 
 # -----------------zsh-vi-mode-----------------
@@ -284,3 +238,5 @@ export MANPAGER='nvim +Man!'
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export EDITOR="nvim"

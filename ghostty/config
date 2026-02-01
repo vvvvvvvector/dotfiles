@@ -1,10 +1,11 @@
+# shell-integration-features = no-cursor
+# cursor-style-blink = false
+
 font-size = 19
 font-family = "JetBrainsMono Nerd Font Mono"
 theme = vague
 
-adjust-cursor-thickness=2
-
-cursor-style-blink=true
+adjust-cursor-thickness = 2
 
 quick-terminal-position = center
 
@@ -17,9 +18,8 @@ window-save-state = always
 
 shell-integration = zsh
 
-keybind = super+r>super+z=reset_font_size
-
 macos-non-native-fullscreen = true
 keybind = super+t=unbind
 
 mouse-hide-while-typing = true
+keybind = ctrl+`=csi:24~
