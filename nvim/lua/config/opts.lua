@@ -23,3 +23,5 @@ vim.opt.backup = false
 vim.opt.undofile = true
 
 vim.opt.termguicolors = true
+
+vim.opt.guicursor = "n-v-c:block-blinkwait1-blinkon1-blinkoff1,i-ci-ve:ver25-blinkwait1-blinkon1-blinkoff1,r-cr-o:hor20-blinkwait1-blinkon1-blinkoff1"
