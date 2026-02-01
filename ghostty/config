@@ -22,4 +22,7 @@ macos-non-native-fullscreen = true
 keybind = super+t=unbind
 
 mouse-hide-while-typing = true
+
+# Keybindings
 keybind = ctrl+`=csi:24~
+keybind = shift+enter=text:\x1b\r
