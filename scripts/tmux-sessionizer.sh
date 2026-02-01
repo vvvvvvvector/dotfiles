@@ -6,13 +6,13 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     # store result of the selection in selected variable
-    selected=$(find ~/Github ~/Work/ -mindepth 1 -maxdepth 1 -type d | \
-        # replace home path with empty string
+    selected=$(
+        { find ~/Github ~/Work/ -mindepth 1 -maxdepth 1 -type d; echo /tmp; } | \
         sed "s|^$HOME/||" | \
         fzf
     )
     # if selected variable is not empty (string is not empty -n; string length > 0)
-    if [[ -n "$selected" ]]; then
+    if [[ -n "$selected" && "$selected" != /* ]]; then
         selected="$HOME/$selected"
     fi
     # ^^^ Add home path back ^^^
