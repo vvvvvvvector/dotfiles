@@ -34,6 +34,9 @@ fi
 
 # if not inside tmux session and tmux process is running
 if [[ -z $TMUX ]] && [[ -n $tmux_running ]]; then
+    if ! tmux has-session -t="$selected_name" 2> /dev/null; then
+        tmux new-session -ds "$selected_name" -c "$selected"
+    fi
     tmux attach-session -t "$selected_name"
     exit 0
 fi
