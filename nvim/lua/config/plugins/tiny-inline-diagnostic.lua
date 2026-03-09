@@ -35,8 +35,8 @@ return {
       options = {
         -- Display the source of diagnostics (e.g., "lua_ls", "pyright")
         show_source = {
-          enabled = false,   -- Enable showing source names
-          if_many = false,   -- Only show source if multiple sources exist for the same diagnostic
+          enabled = false, -- Enable showing source names
+          if_many = false, -- Only show source if multiple sources exist for the same diagnostic
         },
 
         -- Display the diagnostic code of diagnostics (e.g., "F401", "no-dupe-args")
@@ -46,7 +46,7 @@ return {
         use_icons_from_diagnostic = false,
 
         -- Color the arrow to match the severity of the first diagnostic
-        set_arrow_to_diag_color = false,
+        set_arrow_to_diag_color = true,
 
 
         -- Throttle update frequency in milliseconds to improve performance
@@ -61,31 +61,31 @@ return {
         -- NOTE: When using display_count = true, you need to enable multiline diagnostics with multilines.enabled = true
         --       If you want them to always be displayed, you can also set multilines.always_show = true.
         add_messages = {
-          messages = true,               -- Show full diagnostic messages
-          display_count = false,         -- Show diagnostic count instead of messages when cursor not on line
-          use_max_severity = false,      -- When counting, only show the most severe diagnostic
-          show_multiple_glyphs = true,   -- Show multiple icons for multiple diagnostics of same severity
+          messages = true,             -- Show full diagnostic messages
+          display_count = false,       -- Show diagnostic count instead of messages when cursor not on line
+          use_max_severity = false,    -- When counting, only show the most severe diagnostic
+          show_multiple_glyphs = true, -- Show multiple icons for multiple diagnostics of same severity
         },
 
         -- Settings for multiline diagnostics
         multilines = {
-          enabled = false,            -- Enable support for multiline diagnostic messages
-          always_show = false,        -- Always show messages on all lines of multiline diagnostics
-          trim_whitespaces = false,   -- Remove leading/trailing whitespace from each line
-          tabstop = 4,                -- Number of spaces per tab when expanding tabs
-          severity = nil,             -- Filter multiline diagnostics by severity (e.g., { vim.diagnostic.severity.ERROR })
+          enabled = false,          -- Enable support for multiline diagnostic messages
+          always_show = false,      -- Always show messages on all lines of multiline diagnostics
+          trim_whitespaces = false, -- Remove leading/trailing whitespace from each line
+          tabstop = 4,              -- Number of spaces per tab when expanding tabs
+          severity = nil,           -- Filter multiline diagnostics by severity (e.g., { vim.diagnostic.severity.ERROR })
         },
 
         -- Show all diagnostics on the current cursor line, not just those under the cursor
-        show_all_diags_on_cursorline = false,
+        show_all_diags_on_cursorline = true,
 
         -- Only show diagnostics when the cursor is directly over them, no fallback to line diagnostics
         show_diags_only_under_cursor = false,
 
         -- Display related diagnostics from LSP relatedInformation
         show_related = {
-          enabled = true,   -- Enable displaying related diagnostics
-          max_count = 3,    -- Maximum number of related diagnostics to show per diagnostic
+          enabled = true, -- Enable displaying related diagnostics
+          max_count = 3,  -- Maximum number of related diagnostics to show per diagnostic
         },
 
         -- Enable diagnostics display in insert mode
@@ -97,14 +97,14 @@ return {
 
         -- Handle messages that exceed the window width
         overflow = {
-          mode = "wrap",   -- "wrap": split into lines, "none": no truncation, "oneline": keep single line
-          padding = 0,     -- Extra characters to trigger wrapping earlier
+          mode = "wrap", -- "wrap": split into lines, "none": no truncation, "oneline": keep single line
+          padding = 0,   -- Extra characters to trigger wrapping earlier
         },
 
         -- Break long messages into separate lines
         break_line = {
-          enabled = false,   -- Enable automatic line breaking
-          after = 30,        -- Number of characters before inserting a line break
+          enabled = false, -- Enable automatic line breaking
+          after = 30,      -- Number of characters before inserting a line break
         },
 
         -- Custom function to format diagnostic messages
@@ -132,7 +132,7 @@ return {
         overwrite_events = nil,
 
         -- Automatically disable diagnostics when opening diagnostic float windows
-        override_open_float = false,
+        override_open_float = true,
 
         -- Experimental options, subject to misbehave in future NeoVim releases
         experimental = {
