@@ -9,7 +9,11 @@ adjust-cursor-thickness = 2
 
 quick-terminal-position = center
 
+# scrollbar = never
+window-padding-y = 0
+window-padding-x = 0,0
 window-padding-color = background
+# window-padding-balance = false
 
 window-title-font-family = "JetBrainsMono Nerd Font Mono"
 # window-height = 33 
@@ -19,6 +23,7 @@ window-save-state = always
 shell-integration = zsh
 
 macos-titlebar-style = hidden
+# macos-titlebar-style = transparent
 macos-non-native-fullscreen = true
 keybind = super+t=unbind
 
