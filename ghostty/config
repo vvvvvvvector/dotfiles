@@ -12,12 +12,13 @@ quick-terminal-position = center
 window-padding-color = background
 
 window-title-font-family = "JetBrainsMono Nerd Font Mono"
-window-height = 33 
-window-width = 83
+# window-height = 33 
+# window-width = 83
 window-save-state = always
 
 shell-integration = zsh
 
+macos-titlebar-style = hidden
 macos-non-native-fullscreen = true
 keybind = super+t=unbind
 
@@ -26,3 +27,6 @@ mouse-hide-while-typing = true
 # Keybindings
 keybind = ctrl+`=csi:24~
 keybind = shift+enter=text:\x1b\r
+
+fullscreen = non-native
+
