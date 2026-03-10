@@ -15,7 +15,7 @@ else
           echo ~/.config/aerospace;
         } | \
         sed "s|^$HOME/||" | \
-        fzf
+        fzf --height 100%
     )
     # if selected variable is not empty (string is not empty -n; string length > 0)
     if [[ -n "$selected" && "$selected" != /* ]]; then

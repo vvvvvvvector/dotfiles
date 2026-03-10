@@ -7,7 +7,7 @@ if [[ -z $sessions ]]; then
     exit 0
 fi
 
-selected=$(echo "$sessions" | fzf)
+selected=$(echo "$sessions" | fzf --height 100%)
 
 if [[ -z $selected ]]; then
     exit 0
