@@ -33,7 +33,19 @@ return {
         },
         lualine_b = { { "branch", icon = "" }, "diff", { "diagnostics", symbols = {} } },
         lualine_c = { { "filename", path = 0 } },
-        lualine_x = { "searchcount", "encoding", { "filetype", colored = false } },
+        lualine_x = {
+          {
+            function()
+              for _, win in ipairs(vim.fn.getwininfo()) do
+                if win.quickfix == 1 then
+                  local qf = vim.fn.getqflist({ idx = 0, size = true })
+                  return string.format("QF:%d/%d", qf.idx, qf.size)
+                end
+              end
+              return ""
+            end,
+          },
+          "searchcount", "encoding", { "filetype", colored = false } },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
