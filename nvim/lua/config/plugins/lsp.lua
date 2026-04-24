@@ -49,8 +49,8 @@ return {
           vim.keymap.set("n", "<leader>kD", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
           vim.keymap.set("n", "<leader>q", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 
-          vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>zz", opts)
-          vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>zz", opts)
+          vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.jump({ count = -1 })<cr>zz", opts)
+          vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.jump({ count = 1 })<cr>zz", opts)
         end,
       })
     end,
