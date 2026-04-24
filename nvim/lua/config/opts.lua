@@ -18,6 +18,7 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.clipboard = "unnamedplus" -- vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.swapfile = false
