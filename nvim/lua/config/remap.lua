@@ -35,6 +35,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
+vim.keymap.set("n", "J", "mzJ`z")
+
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "No highlight" })
 
 vim.keymap.set("n", "<C-p>", "<cmd>cprev<cr>zz")
