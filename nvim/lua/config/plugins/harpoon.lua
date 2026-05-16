@@ -27,6 +27,7 @@ return {
 
   config = function()
     local harpoon = require("harpoon")
+    local harpoon_ns = vim.api.nvim_create_namespace("HarpoonCurrentFile")
 
     -- REQUIRED
     harpoon:setup()
@@ -79,7 +80,9 @@ return {
         for line_number, file in pairs(cx.contents) do
           if string.find(cx.current_file, file, 1, true) then
             -- highlight the harpoon menu line that corresponds to the current buffer
-            vim.api.nvim_buf_add_highlight(cx.bufnr, -1, "HarpoonLine", line_number - 1, 0, -1)
+            vim.api.nvim_buf_set_extmark(cx.bufnr, harpoon_ns, line_number - 1, 0, {
+              line_hl_group = "HarpoonLine",
+            })
             -- set the position of the cursor in the harpoon menu to the start of the current buffer line
             vim.api.nvim_win_set_cursor(cx.win_id, { line_number, 0 })
           end
