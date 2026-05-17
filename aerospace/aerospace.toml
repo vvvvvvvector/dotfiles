@@ -41,8 +41,10 @@ automatically-unhide-macos-hidden-apps = false
     alt-4 = 'workspace 4' # Chrome
 
     alt-f = 'workspace F' # Finder
+    alt-o = 'workspace O' # Obsidian
     alt-e = 'workspace E' # Empty
     alt-d = 'workspace D' # Docker
+    alt-n = 'workspace N' # NordVPN
 
     alt-ctrl-h = 'workspace prev' 
     alt-ctrl-l = 'workspace next' 
@@ -53,6 +55,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
     alt-shift-e = ['move-node-to-workspace E', 'workspace E']
     alt-shift-d = ['move-node-to-workspace D', 'workspace D']
+    alt-shift-o = ['move-node-to-workspace O', 'workspace O']
 
     alt-sectionSign = 'workspace-back-and-forth'
     alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
@@ -82,10 +85,6 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.app-id = 'ru.keepcoder.Telegram'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.nordvpn.NordVPN'
     run = ['layout floating'] 
 
 [[on-window-detected]]
@@ -127,3 +126,11 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.microsoft.VSCode'
     run = ['layout floating'] 
+
+[[on-window-detected]]
+    if.app-id = 'com.nordvpn.NordVPN'
+    run = ['move-node-to-workspace N'] 
+
+[[on-window-detected]]
+    if.app-id = 'md.obsidian'
+    run = ['layout floating','move-node-to-workspace O'] 
