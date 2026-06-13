@@ -18,8 +18,6 @@ return {
 
         sh = { "shellharden" }
       },
-
-      log_level = vim.log.levels.DEBUG
     })
 
     vim.keymap.set("n", "<leader>kd", function()
