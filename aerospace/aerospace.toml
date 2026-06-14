@@ -50,7 +50,6 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     alt-o = 'workspace OBSIDIAN'
     alt-e = 'workspace EMPTY' 
     alt-d = 'workspace DOCKER' 
-    alt-n = 'workspace NORD' 
 
     alt-ctrl-h = 'workspace prev' 
     alt-ctrl-l = 'workspace next' 
@@ -88,53 +87,13 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     run = 'move-node-to-workspace CHROME' 
 
 [[on-window-detected]]
-    if.app-id = 'ru.keepcoder.Telegram'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'notion.id'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.figma.Desktop'
-    run = ['layout floating']
-
-[[on-window-detected]]
-    if.app-id = 'com.hnc.Discord'
-    run = ['layout floating']
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.Safari'
-    run = ['layout floating']
-
-[[on-window-detected]]
     if.app-id = 'com.electron.dockerdesktop'
     run = ['layout floating', 'move-node-to-workspace DOCKER'] 
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.iCal'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.AppStore'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.ScreenContinuity'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.iBooksX'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.microsoft.VSCode'
-    run = ['layout floating'] 
-
-[[on-window-detected]]
-    if.app-id = 'com.nordvpn.NordVPN'
-    run = ['move-node-to-workspace NORD'] 
-
-[[on-window-detected]]
     if.app-id = 'md.obsidian'
     run = ['layout floating','move-node-to-workspace OBSIDIAN'] 
+
+[[on-window-detected]]
+    check-further-callbacks = true
+    run = ['layout floating', 'move-node-to-workspace EMPTY']
