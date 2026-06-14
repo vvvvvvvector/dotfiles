@@ -34,4 +34,4 @@ keybind = ctrl+`=csi:24~
 keybind = shift+enter=text:\x1b\r
 
 fullscreen = non-native
-
+# fullscreen = false
