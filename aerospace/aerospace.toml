@@ -63,7 +63,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     alt-sectionSign = 'workspace-back-and-forth'
     alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
 
-    alt-shift-semicolon = 'mode service'
+    alt-semicolon = 'mode service'
 
 [mode.service.binding]
     r = ['reload-config', 'mode main']
@@ -76,7 +76,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
 
 [[on-window-detected]]
     if.app-id = 'com.mitchellh.ghostty'
-    run = ['layout tiling', 'move-node-to-workspace GHOSTTY'] 
+    run = ['move-node-to-workspace GHOSTTY'] 
 
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
@@ -88,11 +88,11 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
 
 [[on-window-detected]]
     if.app-id = 'com.electron.dockerdesktop'
-    run = ['layout floating', 'move-node-to-workspace DOCKER'] 
+    run = ['move-node-to-workspace DOCKER'] 
 
 [[on-window-detected]]
     if.app-id = 'md.obsidian'
-    run = ['layout floating','move-node-to-workspace OBSIDIAN'] 
+    run = ['move-node-to-workspace OBSIDIAN'] 
 
 [[on-window-detected]]
     check-further-callbacks = true
