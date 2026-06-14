@@ -34,7 +34,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
 
-    equal = 'balance-sizes'
+    alt-0 = 'balance-sizes'
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
