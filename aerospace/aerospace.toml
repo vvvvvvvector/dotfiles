@@ -44,7 +44,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     alt-1 = 'workspace ARCM'
 
     alt-2 = 'workspace GHOSTTY'
-    alt-backtick = 'workspace GHOSTTY'
+    # alt-backtick = 'workspace GHOSTTY'
 
     alt-3 = 'workspace ARCD'
     alt-4 = 'workspace CHROME'
@@ -57,20 +57,20 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     alt-ctrl-h = 'workspace prev' 
     alt-ctrl-l = 'workspace next' 
 
-    alt-shift-1 = ['move-node-to-workspace ARCM', 'workspace ARCM'] 
-    alt-shift-2 = ['move-node-to-workspace GHOSTTY', 'workspace GHOSTTY'] 
-    alt-shift-3 = ['move-node-to-workspace ARCD', 'workspace ARCD'] 
-    alt-shift-4 = ['move-node-to-workspace CHROME', 'workspace CHROME'] 
+    alt-shift-1 = ['move-node-to-workspace ARCM', 'workspace ARCM', 'layout tiling'] 
+    alt-shift-2 = ['move-node-to-workspace GHOSTTY', 'workspace GHOSTTY', 'layout floating'] 
+    alt-shift-3 = ['move-node-to-workspace ARCD', 'workspace ARCD', 'layout tiling'] 
+    alt-shift-4 = ['move-node-to-workspace CHROME', 'workspace CHROME', 'layout tiling'] 
     alt-shift-e = ['move-node-to-workspace EMPTY', 'workspace EMPTY']
 
     alt-sectionSign = 'workspace-back-and-forth'
     alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
 
-    alt-semicolon = 'mode service'
+    alt-backtick = 'mode service'
 
 [mode.service.binding]
-    r = ['reload-config', 'mode main']
     esc = ['mode main']
+    r = ['reload-config', 'mode main']
     space = ['layout floating tiling', 'mode main']
 
 [[on-window-detected]]
@@ -79,7 +79,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
 
 [[on-window-detected]]
     if.app-id = 'com.mitchellh.ghostty'
-    run = ['move-node-to-workspace GHOSTTY'] 
+    run = ['layout floating', 'move-node-to-workspace GHOSTTY'] 
 
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
