@@ -8,7 +8,7 @@ return {
 			-- Turn on LSP, formatting, and linting status and progress information
 			require("fidget").setup({
 				notification = {
-          override_vim_notify = true,
+          override_vim_notify = false,
 					window = {
 						winblend = 100,
 					},
