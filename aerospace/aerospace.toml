@@ -74,7 +74,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     space = ['layout floating tiling', 'mode main']
 
 [[on-window-detected]]
-    if.app-id = 'net.imput.helium'
+    if.app-id = 'company.thebrowser.Browser'
     run = 'move-node-to-workspace ARCM' 
 
 [[on-window-detected]]
@@ -86,7 +86,7 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     run = ['layout floating', 'move-node-to-workspace FINDER']
 
 [[on-window-detected]]
-    if.app-id = 'com.google.Chrome'
+    if.app-id = 'net.imput.helium'
     run = 'move-node-to-workspace CHROME' 
 
 [[on-window-detected]]
