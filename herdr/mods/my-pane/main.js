@@ -6,7 +6,7 @@
 
 import { View, div, svg, image } from "gpui-kit";
 import { h_flex } from "gpui-base";
-import { panes, props, run, theme, home, layout, shared } from "herdr";
+import { panes, props, run, theme, home, layout, shared, terminals } from "herdr";
 
 // Match the first visible tab frame, including the active child of a stack.
 function paneFrame(node) {
@@ -68,6 +68,13 @@ export default class Pane extends View {
     // The scroll-mode mod shares which terminal it's scrolling.
     const scroll = shared("scroll-mode");
     const scrolling = Boolean(scroll?.terminal) && scroll.terminal === props()?.terminal;
+    // scroll-mode's copy pane runs its script as `herdr-copy`.
+    const copying = terminals().find((x) => x.address === props()?.terminal)?.argv?.[3] === "herdr-copy";
+    const badge = (color, label) => h_flex().flex_none().h(18).px(8).gap(6).items_center().rounded_full()
+      .bg(color + "1f").border_1().border_color(color + "55")
+      .text_size(10.5).font_medium().text_color(color)
+      .child(div().w(5).h(5).rounded_full().bg(color).loop("opacity", { from: 0.35, to: 1, period: 1600 }))
+      .child(label);
     return h_flex()
       .id(`pane-head-${pane}`)
       .size_full()
@@ -84,11 +91,8 @@ export default class Pane extends View {
       .when(Boolean(pic), (el) => el.child(pic))
       .child(div().flex_none().truncate().max_w(260).font_medium().text_color(t.foreground).child(name))
       .child(div().flex_1().truncate().text_color(t.dim).child(folder(p.cwd)))
-      .when(scrolling, el => el.child(h_flex().flex_none().h(18).px(8).gap(6).items_center().rounded_full()
-        .bg(t.accent + "1f").border_1().border_color(t.accent + "55")
-        .text_size(10.5).font_medium().text_color(t.accent)
-        .child(div().w(5).h(5).rounded_full().bg(t.accent).loop("opacity", { from: 0.35, to: 1, period: 1600 }))
-        .child("Scroll")))
+      .when(scrolling, el => el.child(badge(t.accent, "Scroll")))
+      .when(copying, el => el.child(badge(t.ansi2, "Copy")))
       .when(st === "working", el => el.child(svg("mods/workspace-chrome/spinner.svg").size(12).flex_none().text_color(t.working).spin(900)))
       .when(st === "blocked", el => el.child(div().flex_none().px(6).h(18).flex().items_center().rounded(5).bg(t.blocked + "26").text_size(10.5).font_semibold().text_color(t.blocked).child("Needs you")))
       .when(st === "done", el => el.child(div().size(7).flex_none().rounded(4).bg(t.done)))
