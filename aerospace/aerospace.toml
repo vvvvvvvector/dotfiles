@@ -10,7 +10,7 @@ accordion-padding = 0
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY', 'DOCKER']
+persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY', 'DOCKER', 'HERDR', 'NORD']
 
 [key-mapping]
     preset = 'qwerty'
@@ -53,6 +53,8 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
     alt-o = 'workspace OBSIDIAN'
     alt-e = 'workspace EMPTY' 
     alt-d = 'workspace DOCKER' 
+    alt-r = 'workspace HERDR' 
+    alt-n = 'workspace NORD' 
 
     alt-ctrl-h = 'workspace prev' 
     alt-ctrl-l = 'workspace next' 
@@ -91,11 +93,19 @@ persistent-workspaces = ['ARCM', 'GHOSTTY', 'ARCD', 'CHROME', 'FINDER', 'EMPTY',
 
 [[on-window-detected]]
     if.app-id = 'com.electron.dockerdesktop'
-    run = ['move-node-to-workspace DOCKER'] 
+    run = 'move-node-to-workspace DOCKER' 
 
 [[on-window-detected]]
     if.app-id = 'md.obsidian'
-    run = ['move-node-to-workspace OBSIDIAN'] 
+    run = 'move-node-to-workspace OBSIDIAN' 
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'herdr'
+    run = 'move-node-to-workspace HERDR' 
+
+[[on-window-detected]]
+    if.app-id = 'com.nordvpn.NordVPN'
+    run = 'move-node-to-workspace NORD' 
 
 [[on-window-detected]]
     check-further-callbacks = true
