@@ -44,7 +44,7 @@
                 "id": "spaces",
                 "type": "block",
                 "content": {
-                  "mod": "spaces"
+                  "mod": "my-spaces"
                 },
                 "size": {
                   "weight": 1.0
@@ -55,7 +55,7 @@
                 "id": "agents",
                 "type": "block",
                 "content": {
-                  "mod": "agents"
+                  "mod": "my-agents"
                 },
                 "size": {
                   "weight": 1.0
@@ -179,7 +179,8 @@
             },
             "size": {
               "px": 28.0
-            }
+            },
+            "hidden": true
           }
         ],
         "resizable": false
