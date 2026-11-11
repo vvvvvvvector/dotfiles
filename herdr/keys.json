@@ -83,7 +83,8 @@
     "ctrl-a ,": "tab.rename",
     "ctrl-a $": "space.rename",
     "ctrl-a (": "space.prev",
-    "ctrl-a )": "space.next"
+    "ctrl-a )": "space.next",
+    "ctrl-a s": "mod.open:my-picker"
   },
   "terminal": {
     "cmd-u": "mod.open:scroll-mode",
