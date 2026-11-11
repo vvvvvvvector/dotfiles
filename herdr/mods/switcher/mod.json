@@ -1,6 +1,6 @@
 {
   "place": "none",
-  "title": "My picker",
+  "title": "Switcher",
   "overlay": {
     "kind": "popup",
     "at": "top",

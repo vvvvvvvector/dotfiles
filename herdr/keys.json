@@ -84,7 +84,7 @@
     "ctrl-a $": "space.rename",
     "ctrl-a (": "space.prev",
     "ctrl-a )": "space.next",
-    "ctrl-a s": "mod.open:my-picker"
+    "ctrl-a s": "mod.open:switcher"
   },
   "terminal": {
     "cmd-u": "mod.open:scroll-mode",

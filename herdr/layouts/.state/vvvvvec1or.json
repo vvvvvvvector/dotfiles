@@ -44,7 +44,7 @@
                 "id": "spaces",
                 "type": "block",
                 "content": {
-                  "mod": "my-spaces"
+                  "mod": "sidebar-spaces"
                 },
                 "size": {
                   "weight": 1.0
@@ -55,7 +55,7 @@
                 "id": "agents",
                 "type": "block",
                 "content": {
-                  "mod": "my-agents"
+                  "mod": "sidebar-agents"
                 },
                 "size": {
                   "weight": 1.0
@@ -113,7 +113,7 @@
                   "pane": {
                     "header": {
                       "content": {
-                        "mod": "my-pane"
+                        "mod": "pane-bar"
                       },
                       "reveal": "always",
                       "height": 30.0,

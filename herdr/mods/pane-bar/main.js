@@ -1,5 +1,5 @@
 // A pane's header, for layouts that frame their panes:
-//   { "tab": "active", "pane": { "header": { "content": { "mod": "my-pane" } } } }
+//   { "tab": "active", "pane": { "header": { "content": { "mod": "pane-bar" } } } }
 // Shows the program's icon (the app's program table), the agent's name or
 // the terminal's title, the folder, and the agent's status; buttons split, zoom and close
 // this pane. Props from the app: { pane, terminal }. Click: focus the pane.
@@ -53,7 +53,7 @@ export default class Pane extends View {
         cx.stop_propagation();
         run(command, args);
       })
-      .child(svg(`mods/my-pane/${icon}.svg`).size(14));
+      .child(svg(`mods/pane-bar/${icon}.svg`).size(14));
   }
 
   render(cx) {

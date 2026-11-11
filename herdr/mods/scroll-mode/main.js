@@ -3,7 +3,7 @@
 // v opens copy mode: the history in nvim (copy.lua), in a zoomed split over the pane,
 // at the part that was on screen. When nvim quits, its pane closes and the zoom ends.
 // It draws nothing itself: it shares { terminal } as "scroll-mode", and the
-// pane header (my-pane) shows the badge on that terminal's pane.
+// pane header (pane-bar) shows the badge on that terminal's pane.
 import { View, div } from "gpui-kit";
 import { run, props, focused, closeOverlay, setShared, appHome } from "herdr";
 
@@ -18,7 +18,7 @@ const MOVES = {
   G: { to: "bottom" }, end: { to: "bottom" },
 };
 
-// Runs in the copy pane, as `herdr-copy` (my-pane looks for that name in its argv):
+// Runs in the copy pane, as `herdr-copy` (pane-bar looks for that name in its argv):
 // $1 terminal, $2 lines up, $3 pages up, $4 at top (1/0), $5 copy.lua. Reads the history,
 // drops trailing blanks, works out the line that was at the top of the screen, opens nvim there.
 const COPY_SCRIPT = `

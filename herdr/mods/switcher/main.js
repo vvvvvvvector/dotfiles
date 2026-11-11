@@ -207,7 +207,7 @@ export default class MyPicker extends View {
 
     const filtering = this.mode === "filter";
     return v_flex()
-      .id("my-picker")
+      .id("switcher")
       .key_context("MyPicker")
       .on_action("my_picker_escape", (_e, cx) => this.escape(cx))
       .track_focus(this.handle)
