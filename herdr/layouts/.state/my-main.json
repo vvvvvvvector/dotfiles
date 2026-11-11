@@ -2,7 +2,16 @@
   "nodes": {
     "panel-body": {
       "active": "changes"
+    },
+    "sidebar": {
+      "size": {
+        "px": 274.0
+      }
     }
+  },
+  "theme": {
+    "light": "paper",
+    "dark": "graphite"
   },
   "file": {
     "id": "root",
